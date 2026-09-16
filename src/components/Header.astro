@@ -1,0 +1,61 @@
+---
+const pathname = Astro.url.pathname;
+
+const links = [
+  { href: '/', label: 'Home' },
+  { href: '/memberships', label: 'Memberships' },
+  { href: '/camps', label: 'Camps & Training' },
+  { href: '/events', label: 'Events' },
+  { href: '/team', label: 'Team' },
+  { href: '/contact', label: 'Contact' },
+];
+
+function isCurrent(href: string) {
+  if (href === '/') return pathname === '/';
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="/" aria-label="Arizona Pole Vault Academy home">
+      AZPVA
+      <span>Arizona Pole Vault Academy</span>
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      {links.map((link) => (
+        <a href={link.href} aria-current={isCurrent(link.href) ? 'page' : undefined}>
+          {link.label}
+        </a>
+      ))}
+    </nav>
+
+    <a class="btn btn-primary header-cta" href="https://azpva.pushpress.com" target="_blank" rel="noopener noreferrer">
+      Member App
+    </a>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" id="menu-toggle">
+      Menu
+    </button>
+  </div>
+
+  <nav class="container mobile-nav" id="mobile-nav" aria-label="Mobile">
+    {links.map((link) => (
+      <a href={link.href} aria-current={isCurrent(link.href) ? 'page' : undefined}>
+        {link.label}
+      </a>
+    ))}
+    <a class="btn btn-primary" href="tel:+14807666017">Call (480) 766-6017</a>
+    <a class="btn btn-ghost" href="https://azpva.pushpress.com" target="_blank" rel="noopener noreferrer">Open Member App</a>
+  </nav>
+</header>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const nav = document.getElementById('mobile-nav');
+  toggle?.addEventListener('click', () => {
+    const open = nav?.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+</script>

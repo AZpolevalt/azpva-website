@@ -1,0 +1,166 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CampCard from '../components/CampCard.astro';
+import CoachCard from '../components/CoachCard.astro';
+import { getCollection } from 'astro:content';
+
+const camps = (await getCollection('camps'))
+  .sort((a, b) => a.data.startDate.valueOf() - b.data.startDate.valueOf())
+  .slice(0, 2);
+
+const coaches = (await getCollection('coaches'))
+  .filter((c) => c.data.featured)
+  .sort((a, b) => a.data.order - b.data.order)
+  .slice(0, 3);
+---
+
+<BaseLayout
+  title="Arizona Pole Vault Academy | Queen Creek Vault Training"
+  description="Vaulting high doesn’t have to be difficult. Elite & Lite memberships, camps, and expert coaching at Arizona Pole Vault Academy in Queen Creek."
+>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow">Queen Creek, Arizona</p>
+        <h1>Vaulting high doesn’t have to be difficult.</h1>
+        <p class="lead">
+          Arizona Pole Vault Academy is a specialty facility built for the event —
+          expert coaches, 400+ poles, multiple pits, and memberships that fit serious athletes and developing vaulters alike.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="/memberships">View Memberships</a>
+          <a class="btn btn-ghost" href="tel:+14807666017">Call (480) 766-6017</a>
+        </div>
+      </div>
+
+      <aside class="hero-card" aria-label="Facility highlights">
+        <h3>Built for the vault</h3>
+        <div class="stat-row">
+          <div class="stat"><strong>6</strong><span>Coaches on staff</span></div>
+          <div class="stat"><strong>400+</strong><span>Poles in fleet</span></div>
+          <div class="stat"><strong>3</strong><span>Landing pits</span></div>
+          <div class="stat"><strong>100m</strong><span>2-lane runway track</span></div>
+        </div>
+        <p style="margin: 1rem 0 0; color: rgba(255,255,255,0.85)">
+          Weight room, rope swing, and a coaching culture that treats technique as a craft.
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow" style="color: var(--red)">Memberships</p>
+          <h2>Train with a plan that fits</h2>
+          <p class="muted">Enroll by phone. Reserve sessions in the PushPress member app.</p>
+        </div>
+        <a class="btn btn-secondary" href="/memberships">Compare plans</a>
+      </div>
+
+      <div class="card-grid cols-2">
+        <article class="card">
+          <div class="badge" style="margin-bottom: 0.75rem">Most popular</div>
+          <h3>Elite</h3>
+          <p class="price">$349 <span>/ month</span></p>
+          <ul class="list-check">
+            <li>Priority access to training sessions</li>
+            <li>Full facility & pole fleet access</li>
+            <li>Best fit for competitive high school & beyond</li>
+          </ul>
+          <a class="btn btn-primary" href="/memberships/elite">Elite details</a>
+        </article>
+
+        <article class="card">
+          <div class="badge coming-soon" style="margin-bottom: 0.75rem">Flexible</div>
+          <h3>Lite</h3>
+          <p class="price">$199 <span>/ month</span></p>
+          <ul class="list-check">
+            <li>Structured membership at a lower monthly rate</li>
+            <li>Great for developing athletes & busy schedules</li>
+            <li>Same coaching staff and Queen Creek facility</li>
+          </ul>
+          <a class="btn btn-secondary" href="/memberships/lite">Lite details</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 0">
+    <div class="container">
+      <div class="feature-strip">
+        <div class="feature"><strong>Specialty facility</strong><span class="muted">Not a side lane at a general practice — vault is the product.</span></div>
+        <div class="feature"><strong>Video & technique</strong><span class="muted">Clear progressions and feedback that sticks between sessions.</span></div>
+        <div class="feature"><strong>Camps & travel</strong><span class="muted">Fall/Winter camps plus competitive trips like Reno Summit.</span></div>
+        <div class="feature"><strong>Family-friendly ops</strong><span class="muted">Call to enroll; reserve in the app once you’re a member.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background: white; border-block: 1px solid var(--line)">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow" style="color: var(--red)">Upcoming</p>
+          <h2>Camps & training blocks</h2>
+        </div>
+        <a class="btn btn-secondary" href="/camps">All camps</a>
+      </div>
+      <div class="card-grid cols-2">
+        {camps.map((camp) => (
+          <CampCard
+            title={camp.data.title}
+            dates={camp.data.dates}
+            summary={camp.data.summary}
+            price={camp.data.price}
+            status={camp.data.status}
+            href={`/camps/${camp.id}`}
+          />
+        ))}
+      </div>
+      <p style="margin-top: 1.25rem">
+        Looking for the Mon/Wed fall block? See <a href="/fall-training"><strong>Fall Training</strong></a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow" style="color: var(--red)">Team</p>
+          <h2>Coaches who live the event</h2>
+        </div>
+        <a class="btn btn-secondary" href="/team">Meet the team</a>
+      </div>
+      <div class="card-grid cols-3">
+        {coaches.map((coach) => (
+          <CoachCard
+            name={coach.data.name}
+            role={coach.data.role}
+            pbs={coach.data.pbs}
+            href={`/team/${coach.id}`}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <div class="cta-band">
+        <div>
+          <h2 style="margin-bottom: 0.4rem">Ready to start?</h2>
+          <p style="margin: 0; color: rgba(255,255,255,0.9)">
+            Call to discuss Elite or Lite, or open the PushPress app if you’re already a member.
+          </p>
+        </div>
+        <div style="display:flex; flex-wrap:wrap; gap:0.75rem">
+          <a class="btn btn-gold" href="tel:+14807666017">Call (480) 766-6017</a>
+          <a class="btn btn-ghost" href="https://azpva.pushpress.com" target="_blank" rel="noopener noreferrer">Member App</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

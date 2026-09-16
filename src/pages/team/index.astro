@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CoachCard from '../../components/CoachCard.astro';
+import { getCollection } from 'astro:content';
+
+const coaches = (await getCollection('coaches')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<BaseLayout
+  title="Team"
+  description="Meet the Arizona Pole Vault Academy coaching team led by Dean Starkey in Queen Creek, Arizona."
+>
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">People</p>
+      <h1>Team</h1>
+      <p style="color: rgba(255,255,255,0.85); max-width: 55ch">
+        Coaches and specialists dedicated to the vault — technique, athlete development, and competition readiness.
+      </p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="card-grid cols-3">
+        {coaches.map((coach) => (
+          <CoachCard
+            name={coach.data.name}
+            role={coach.data.role}
+            pbs={coach.data.pbs}
+            href={`/team/${coach.id}`}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

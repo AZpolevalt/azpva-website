@@ -1,0 +1,20 @@
+---
+interface Props {
+  title: string;
+  dates: string;
+  summary: string;
+  type: string;
+  location?: string;
+  href: string;
+}
+
+const { title, dates, summary, type, location, href } = Astro.props;
+---
+
+<article class="card">
+  <div class="badge" style="margin-bottom: 0.75rem">{type}</div>
+  <h3>{title}</h3>
+  <p class="muted">{dates}{location ? ` · ${location}` : ''}</p>
+  <p>{summary}</p>
+  <a class="btn btn-secondary" href={href} style="margin-top: 0.5rem">Learn more</a>
+</article>

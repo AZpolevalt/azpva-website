@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const events = await getCollection('events');
+  return events.map((event) => ({
+    params: { slug: event.id },
+    props: { event },
+  }));
+}
+
+const { event } = Astro.props;
+const { Content } = await render(event);
+---
+
+<BaseLayout title={event.data.title} description={event.data.summary}>
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">{event.data.type}</p>
+      <h1>{event.data.title}</h1>
+      <p style="color: rgba(255,255,255,0.85)">
+        {event.data.dates}
+        {event.data.location ? ` · ${event.data.location}` : ''}
+      </p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container prose">
+      <Content />
+      <p style="margin-top: 2rem">
+        <a class="btn btn-primary" href="/contact">Ask about registration</a>
+        <a class="btn btn-secondary" href="/events" style="margin-left: 0.5rem">All events</a>
+      </p>
+    </div>
+  </section>
+</BaseLayout>

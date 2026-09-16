@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const camps = await getCollection('camps');
+  return camps.map((camp) => ({
+    params: { slug: camp.id },
+    props: { camp },
+  }));
+}
+
+const { camp } = Astro.props;
+const { Content } = await render(camp);
+---
+
+<BaseLayout title={camp.data.title} description={camp.data.summary}>
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">Camp</p>
+      <h1>{camp.data.title}</h1>
+      <p style="color: rgba(255,255,255,0.85)">{camp.data.dates}</p>
+      <p style="margin-top: 0.75rem">
+        <span class={`badge ${camp.data.status}`}>{camp.data.status.replace('-', ' ')}</span>
+        {camp.data.price && <span style="margin-left: 0.75rem">{camp.data.price}</span>}
+      </p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container prose">
+      <Content />
+      <p style="margin-top: 2rem">
+        <a class="btn btn-primary" href="tel:+14807666017">Call to register</a>
+        <a class="btn btn-secondary" href="/camps" style="margin-left: 0.5rem">All camps</a>
+      </p>
+    </div>
+  </section>
+</BaseLayout>

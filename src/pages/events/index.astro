@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import EventCard from '../../components/EventCard.astro';
+import { getCollection } from 'astro:content';
+
+const events = (await getCollection('events')).sort(
+  (a, b) => a.data.startDate.valueOf() - b.data.startDate.valueOf()
+);
+---
+
+<BaseLayout
+  title="Events"
+  description="AZPVA events — Summer Fun Vault Series, Reno Summit travel, and seasonal training competitions."
+>
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">Compete & travel</p>
+      <h1>Events</h1>
+      <p style="color: rgba(255,255,255,0.85); max-width: 55ch">
+        Local competition nights and travel packages that keep athletes competing with coaching support.
+      </p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="card-grid cols-2">
+        {events.map((event) => (
+          <EventCard
+            title={event.data.title}
+            dates={event.data.dates}
+            summary={event.data.summary}
+            type={event.data.type}
+            location={event.data.location}
+            href={`/events/${event.id}`}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
