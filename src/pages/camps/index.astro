@@ -25,10 +25,16 @@ const camps = (await getCollection('camps')).sort(
   <section class="section">
     <div class="container">
       <div class="card" style="margin-bottom: 1.5rem">
-        <h3>Fall Training 2026</h3>
+        <div style="display:flex; justify-content:space-between; gap:0.75rem; align-items:start; margin-bottom:0.75rem">
+          <h3>Fall Training 2026</h3>
+          <span class="badge closed">closed</span>
+        </div>
         <p class="muted">September 2 – December 23, 2026 · Mon/Wed 5:00–6:30pm · Cap 20</p>
-        <p>Seasonal flagship group for consistent technical development. Separate from weekend camps.</p>
-        <a class="btn btn-primary" href="/fall-training">Fall Training details</a>
+        <p class="notice notice-closed" role="status" style="margin: 0.75rem 0 1rem">
+          <strong>Registration closed — program in progress (entries closed Sep 16).</strong>
+        </p>
+        <p>Seasonal flagship group for consistent technical development. Separate from weekend camps. Not open for new registration.</p>
+        <a class="btn btn-secondary" href="/fall-training">Fall Training details</a>
       </div>
 
       <div class="card-grid cols-2">

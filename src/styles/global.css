@@ -396,6 +396,19 @@ p {
 .badge.open { background: #e5f7ea; color: #176b34; }
 .badge.full { background: #fde8ea; color: #9e0c24; }
 .badge.coming-soon { background: #e8eef8; color: #1d4a86; }
+.badge.closed { background: #fde8ea; color: #9e0c24; }
+
+.notice {
+  border-radius: 12px;
+  padding: 0.9rem 1.1rem;
+  margin: 0 0 1.25rem;
+  border: 1px solid transparent;
+}
+.notice-closed {
+  background: #fde8ea;
+  border-color: #f3c0c7;
+  color: #7a0f1f;
+}
 
 .list-check {
   list-style: none;
