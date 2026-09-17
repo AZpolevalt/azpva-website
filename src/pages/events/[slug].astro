@@ -12,6 +12,7 @@ export async function getStaticPaths() {
 
 const { event } = Astro.props;
 const { Content } = await render(event);
+const { registerUrl, status } = event.data;
 ---
 
 <BaseLayout title={event.data.title} description={event.data.summary}>
@@ -23,14 +24,24 @@ const { Content } = await render(event);
         {event.data.dates}
         {event.data.location ? ` · ${event.data.location}` : ''}
       </p>
+      {event.data.price && (
+        <p style="margin-top: 0.75rem; color: rgba(255,255,255,0.9)">{event.data.price}</p>
+      )}
     </div>
   </section>
   <section class="section">
     <div class="container prose">
       <Content />
-      <p style="margin-top: 2rem">
-        <a class="btn btn-primary" href="/contact">Ask about registration</a>
-        <a class="btn btn-secondary" href="/events" style="margin-left: 0.5rem">All events</a>
+      <p style="margin-top: 2rem; display:flex; flex-wrap:wrap; gap:0.75rem">
+        {registerUrl ? (
+          <a class="btn btn-primary" href={registerUrl} target="_blank" rel="noopener noreferrer">
+            Sign up (PushPress)
+          </a>
+        ) : status === 'coming-soon' || status === 'closed' ? null : (
+          <a class="btn btn-primary" href="/contact">Ask about registration</a>
+        )}
+        <a class="btn btn-secondary" href="tel:+14807666017">Call (480) 766-6017</a>
+        <a class="btn btn-secondary" href="/events">All events</a>
       </p>
     </div>
   </section>
