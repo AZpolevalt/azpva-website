@@ -7,11 +7,11 @@ credentials: University of Illinois · World Championships Bronze Medal
 featured: true
 image: /images/coaches/dean-starkey.jpg
 gallery:
-  - /images/dean/gallery/dean-01.png
-  - /images/dean/gallery/dean-02.png
-  - /images/dean/gallery/dean-03.png
-  - /images/dean/gallery/dean-04.png
-  - /images/dean/gallery/dean-05.png
+  - /images/dean/gallery/dean-01.jpeg
+  - /images/dean/gallery/dean-02.jpeg
+  - /images/dean/gallery/dean-03.jpeg
+  - /images/dean/gallery/dean-04.jpeg
+  - /images/dean/gallery/dean-05.jpeg
   - /images/dean/gallery/dean-06.jpeg
   - /images/dean/gallery/dean-07.jpeg
   - /images/dean/gallery/dean-08.jpeg
@@ -26,14 +26,6 @@ gallery:
   - /images/dean/gallery/dean-17.jpeg
   - /images/dean/gallery/dean-18.jpeg
   - /images/dean/gallery/dean-19.jpeg
-  - /images/dean/gallery/dean-20.jpeg
-  - /images/dean/gallery/dean-21.jpeg
-  - /images/dean/gallery/dean-22.jpeg
-  - /images/dean/gallery/dean-23.jpeg
-  - /images/dean/gallery/dean-24.jpeg
-  - /images/dean/gallery/dean-25.webp
-  - /images/dean/gallery/dean-26.webp
-  - /images/dean/gallery/dean-27.webp
   - /images/dean/dean-vault-action.jpg
 videos:
   - id: LwsBlKL7Ys8
