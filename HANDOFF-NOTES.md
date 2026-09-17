@@ -1,14 +1,15 @@
-# AZPVA edit round handoff (2026-09-16 PT)
+# AZPVA edit round handoff (2026-09-17 PT)
 
 ## Done this round
-- Events: removed Summer Fun Vault Series and Fall Training Block from Events collection (Fall Training page at `/fall-training` kept).
-- Reno Pole Vault Summit (`/events/reno-summit-2027`): full detail from PowerDNN Reno.html — pinnacle copy, event details, itinerary, registration cost table, travel estimates, $299 AZPVA Travel Fee, PushPress signup, official site + meet video links, reminders.
-- Events index copy updated (no summer/fall training mentions); event detail page uses `registerUrl` PushPress CTA when set.
-- Fall Camp (Oct 24–25, 2026) + Winter Camp (Dec 29–30, 2026): enriched from live HTML; dual PushPress CTAs (Commuter $399 / Overnighter $599) via `registerCommuterUrl` / `registerOvernighterUrl`.
-- Logo img uses natural 640×270 aspect; display ~58px header / ~64px footer (`object-fit: contain`).
-- Removed “Member App” / “Open Member App” CTAs from header, footer, mobile nav, home, schedule, contact; rephrased reservation copy to PushPress / staff links. Calendar iframe kept.
-- Pagefind site search: `npm run build` → `astro build && pagefind --site dist`; search UI in header (desktop + mobile).
+- Dean coach media: schema `image` + `videos` (+ optional `portrait` / `actionImage`); Dean frontmatter wired to `/images/coaches/dean-starkey.jpg`, portrait, action vault, 7 YouTube videos (nocookie lazy embeds on `/team/dean-starkey`).
+- CoachCard shows photo when `image` is set; team + home pass `image`.
+- Home hero card: tasteful Dean action shot.
+- **Ask Maya** floating widget sitewide (BaseLayout): name + email OR phone + question; Web3Forms POST when `PUBLIC_WEB3FORMS_KEY` is set; otherwise mailto fallback to arizonapolevaultacademy@gmail.com (subject `Ask Maya — website`).
+- Success copy: “Thanks — Maya will get back to you.”
+- README documents Web3Forms env key + mailto fallback.
 
 ## Blockers / follow-ups
+- **Form key:** Dean must add `PUBLIC_WEB3FORMS_KEY` in Cloudflare Pages (or `.env`) for in-browser submit; until then mailto fallback works.
+- **SMS heads-up:** Maya owns replies. Dean wants SMS to **(480) 766-6017** on new Ask Maya submissions — next step is Twilio or Zapier (or Web3Forms → Zapier) once credentials exist. Email-to-Maya path is implemented now.
 - Logo PNG still has solid black background (source asset); transparent export optional later.
 - DNS/Cloudflare untouched; no git push.

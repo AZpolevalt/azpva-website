@@ -1,0 +1,237 @@
+---
+const web3formsKey = import.meta.env.PUBLIC_WEB3FORMS_KEY as string | undefined;
+const hasKey = Boolean(web3formsKey && web3formsKey.trim() && !web3formsKey.includes('YOUR_'));
+const mayaEmail = 'arizonapolevaultacademy@gmail.com';
+---
+
+<div class="ask-maya" data-ask-maya>
+  <button type="button" class="ask-maya-fab" data-ask-maya-open aria-haspopup="dialog" aria-controls="ask-maya-panel">
+    Ask Maya
+  </button>
+
+  <div
+    class="ask-maya-backdrop"
+    data-ask-maya-close
+    hidden
+  ></div>
+
+  <div
+    id="ask-maya-panel"
+    class="ask-maya-panel"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="ask-maya-title"
+    hidden
+  >
+    <div class="ask-maya-panel-head">
+      <div>
+        <p class="eyebrow" style="color: var(--gold); margin-bottom: 0.25rem">Front Desk</p>
+        <h2 id="ask-maya-title">Ask Maya</h2>
+      </div>
+      <button type="button" class="ask-maya-close" data-ask-maya-close aria-label="Close">×</button>
+    </div>
+
+    <p class="muted ask-maya-copy">
+      Maya is AZPVA’s front desk for hours, memberships, clinics, and camps.
+      Questions about money or comps get escalated to Dean.
+    </p>
+
+    <div class="ask-maya-success" data-ask-maya-success hidden>
+      <p><strong>Thanks — Maya will get back to you.</strong></p>
+    </div>
+
+    <form
+      class="ask-maya-form"
+      data-ask-maya-form
+      data-mode={hasKey ? 'web3forms' : 'mailto'}
+      data-mailto={mayaEmail}
+      method={hasKey ? 'POST' : 'GET'}
+      action={hasKey ? 'https://api.web3forms.com/submit' : `mailto:${mayaEmail}`}
+      novalidate
+    >
+      {hasKey && (
+        <>
+          <input type="hidden" name="access_key" value={web3formsKey} />
+          <input type="hidden" name="subject" value="Ask Maya — website" />
+          <input type="hidden" name="from_name" value="AZPVA Ask Maya" />
+          <input type="checkbox" name="botcheck" class="sr-only" tabindex="-1" autocomplete="off" />
+        </>
+      )}
+
+      <label>
+        <span>Name</span>
+        <input type="text" name="name" required autocomplete="name" placeholder="Your name" />
+      </label>
+
+      <label>
+        <span>Email <em class="muted">(or phone below)</em></span>
+        <input type="email" name="email" autocomplete="email" placeholder="you@example.com" />
+      </label>
+
+      <label>
+        <span>Phone <em class="muted">(or email above)</em></span>
+        <input type="tel" name="phone" autocomplete="tel" placeholder="(480) 555-0100" />
+      </label>
+
+      <label>
+        <span>Question</span>
+        <textarea name="message" rows="4" required placeholder="Hours, memberships, clinics, camps…"></textarea>
+      </label>
+
+      <p class="ask-maya-error muted" data-ask-maya-error hidden></p>
+
+      <button type="submit" class="btn btn-primary" data-ask-maya-submit>
+        {hasKey ? 'Send to Maya' : 'Open email to Maya'}
+      </button>
+
+      {!hasKey && (
+        <p class="muted ask-maya-fallback-note">
+          Form opens your email app to {mayaEmail} (subject: Ask Maya — website).
+          Add <code>PUBLIC_WEB3FORMS_KEY</code> for in-browser submit.
+        </p>
+      )}
+    </form>
+  </div>
+</div>
+
+<script is:inline>
+  (function () {
+    var root = document.querySelector('[data-ask-maya]');
+    if (!root) return;
+
+    var panel = root.querySelector('#ask-maya-panel');
+    var backdrop = root.querySelector('.ask-maya-backdrop');
+    var form = root.querySelector('[data-ask-maya-form]');
+    var success = root.querySelector('[data-ask-maya-success]');
+    var errorEl = root.querySelector('[data-ask-maya-error]');
+    var openBtns = root.querySelectorAll('[data-ask-maya-open]');
+    var closeBtns = root.querySelectorAll('[data-ask-maya-close]');
+
+    function setOpen(open) {
+      if (!panel || !backdrop) return;
+      panel.hidden = !open;
+      backdrop.hidden = !open;
+      document.body.style.overflow = open ? 'hidden' : '';
+      if (open) {
+        var first = panel.querySelector('input, textarea, button');
+        if (first) first.focus();
+      }
+    }
+
+    openBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        setOpen(true);
+      });
+    });
+    closeBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        setOpen(false);
+      });
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && panel && !panel.hidden) setOpen(false);
+    });
+
+    if (!form) return;
+
+    form.addEventListener('submit', function (e) {
+      if (errorEl) {
+        errorEl.hidden = true;
+        errorEl.textContent = '';
+      }
+
+      var name = (form.querySelector('[name="name"]') || {}).value || '';
+      var email = (form.querySelector('[name="email"]') || {}).value || '';
+      var phone = (form.querySelector('[name="phone"]') || {}).value || '';
+      var message = (form.querySelector('[name="message"]') || {}).value || '';
+
+      name = String(name).trim();
+      email = String(email).trim();
+      phone = String(phone).trim();
+      message = String(message).trim();
+
+      if (!name || !message) {
+        e.preventDefault();
+        if (errorEl) {
+          errorEl.hidden = false;
+          errorEl.textContent = 'Please enter your name and question.';
+        }
+        return;
+      }
+      if (!email && !phone) {
+        e.preventDefault();
+        if (errorEl) {
+          errorEl.hidden = false;
+          errorEl.textContent = 'Please provide an email or a phone number.';
+        }
+        return;
+      }
+
+      var mode = form.getAttribute('data-mode');
+
+      if (mode === 'mailto') {
+        e.preventDefault();
+        var to = form.getAttribute('data-mailto') || 'arizonapolevaultacademy@gmail.com';
+        var body =
+          'Name: ' +
+          name +
+          '\nEmail: ' +
+          (email || '(not provided)') +
+          '\nPhone: ' +
+          (phone || '(not provided)') +
+          '\n\nQuestion:\n' +
+          message;
+        var href =
+          'mailto:' +
+          to +
+          '?subject=' +
+          encodeURIComponent('Ask Maya — website') +
+          '&body=' +
+          encodeURIComponent(body);
+        window.location.href = href;
+        if (success) success.hidden = false;
+        form.hidden = true;
+        return;
+      }
+
+      // Web3Forms POST via fetch (stay on page)
+      e.preventDefault();
+      var submitBtn = form.querySelector('[data-ask-maya-submit]');
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending…';
+      }
+
+      var fd = new FormData(form);
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: fd,
+        headers: { Accept: 'application/json' },
+      })
+        .then(function (res) {
+          return res.json().then(function (data) {
+            return { ok: res.ok, data: data };
+          });
+        })
+        .then(function (result) {
+          if (result.ok && result.data && result.data.success) {
+            if (success) success.hidden = false;
+            form.hidden = true;
+          } else {
+            throw new Error((result.data && result.data.message) || 'Submit failed');
+          }
+        })
+        .catch(function () {
+          if (errorEl) {
+            errorEl.hidden = false;
+            errorEl.textContent =
+              'Could not send right now. Email arizonapolevaultacademy@gmail.com or call (480) 766-6017.';
+          }
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send to Maya';
+          }
+        });
+    });
+  })();
+</script>

@@ -28,6 +28,7 @@ const coaches = (await getCollection('coaches')).sort((a, b) => a.data.order - b
             role={coach.data.role}
             credentials={coach.data.credentials}
             pbs={coach.data.pbs}
+            image={coach.data.image}
             href={`/team/${coach.id}`}
           />
         ))}

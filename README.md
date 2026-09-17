@@ -86,6 +86,31 @@ No Cloudflare dashboard or DNS changes are required for this fix — redeploy th
 
 Utility pages: `/fall-training`, `/schedule`, `/pole-rentals`, plus membership detail routes under `/memberships/*`.
 
+## Ask Maya (front-desk form)
+
+Floating **Ask Maya** widget on every page (`src/components/AskMaya.astro`).
+
+### Preferred: Web3Forms (Cloudflare-friendly static POST)
+
+1. Create a free key at [web3forms.com](https://web3forms.com) pointed at **arizonapolevaultacademy@gmail.com**.
+2. Set in Cloudflare Pages (or local `.env`):
+
+```bash
+PUBLIC_WEB3FORMS_KEY=your_access_key_here
+```
+
+3. Rebuild/redeploy. The widget POSTs to `https://api.web3forms.com/submit`.
+
+### Fallback without a key
+
+If `PUBLIC_WEB3FORMS_KEY` is missing, the form opens a **mailto:** draft to `arizonapolevaultacademy@gmail.com` with subject `Ask Maya — website` and the name / email-or-phone / question filled in.
+
+Formspree-style `action` URLs are also compatible if you later swap the POST endpoint; Web3Forms is the documented default.
+
+### Ops note
+
+Maya owns replies. Dean wants an SMS heads-up to **(480) 766-6017** — email path is live now; SMS via Twilio/Zapier is a follow-up needing credentials (see `HANDOFF-NOTES.md`).
+
 ## Contact (live ops)
 
 - Phone: (480) 766-6017

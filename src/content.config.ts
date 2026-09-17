@@ -10,6 +10,18 @@ const coaches = defineCollection({
     pbs: z.string().optional(),
     credentials: z.string().optional(),
     photo: z.string().optional(),
+    image: z.string().optional(),
+    portrait: z.string().optional(),
+    actionImage: z.string().optional(),
+    videos: z
+      .array(
+        z.object({
+          id: z.string(),
+          title: z.string(),
+          url: z.string(),
+        }),
+      )
+      .optional(),
     featured: z.boolean().default(false),
   }),
 });

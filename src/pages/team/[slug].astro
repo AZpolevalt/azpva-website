@@ -12,6 +12,8 @@ export async function getStaticPaths() {
 
 const { coach } = Astro.props;
 const { Content } = await render(coach);
+const { portrait, actionImage, videos, image } = coach.data;
+const hasHeroMedia = Boolean(portrait || actionImage);
 ---
 
 <BaseLayout title={coach.data.name} description={`${coach.data.name} — ${coach.data.role} at Arizona Pole Vault Academy.`}>
@@ -20,13 +22,81 @@ const { Content } = await render(coach);
       <p class="eyebrow">{coach.data.role}</p>
       <h1>{coach.data.name}</h1>
       {coach.data.pbs && <p style="color: rgba(255,255,255,0.85)">{coach.data.pbs}</p>}
+      {hasHeroMedia && (
+        <div class="coach-hero-media">
+          {portrait && (
+            <figure class="coach-hero-fig">
+              <img
+                src={portrait}
+                alt={`${coach.data.name} portrait`}
+                width="480"
+                height="600"
+                loading="eager"
+              />
+            </figure>
+          )}
+          {actionImage && (
+            <figure class="coach-hero-fig coach-hero-action">
+              <img
+                src={actionImage}
+                alt={`${coach.data.name} pole vault action`}
+                width="720"
+                height="480"
+                loading="eager"
+              />
+            </figure>
+          )}
+        </div>
+      )}
+      {!hasHeroMedia && image && (
+        <div class="coach-hero-media coach-hero-media-single">
+          <figure class="coach-hero-fig">
+            <img src={image} alt={coach.data.name} width="400" height="400" loading="eager" />
+          </figure>
+        </div>
+      )}
     </div>
   </section>
   <section class="section">
     <div class="container prose">
       {coach.data.credentials && <p><strong>Background:</strong> {coach.data.credentials}</p>}
       <Content />
-      <p style="margin-top: 2rem"><a class="btn btn-secondary" href="/team">Back to team</a></p>
+    </div>
+  </section>
+
+  {videos && videos.length > 0 && (
+    <section class="section" style="padding-top: 0" id="videos">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow" style="color: var(--red)">Video</p>
+            <h2>Competition & training highlights</h2>
+          </div>
+        </div>
+        <div class="video-grid">
+          {videos.map((video) => (
+            <article class="video-card">
+              <h3 class="video-title">{video.title}</h3>
+              <div class="video-embed">
+                <iframe
+                  src={`https://www.youtube-nocookie.com/embed/${video.id}`}
+                  title={video.title}
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="section" style="padding-top: 0">
+    <div class="container">
+      <p><a class="btn btn-secondary" href="/team">Back to team</a></p>
     </div>
   </section>
 </BaseLayout>

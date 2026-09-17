@@ -4,13 +4,19 @@ interface Props {
   role: string;
   pbs?: string;
   credentials?: string;
+  image?: string;
   href?: string;
 }
 
-const { name, role, pbs, credentials, href } = Astro.props;
+const { name, role, pbs, credentials, image, href } = Astro.props;
 ---
 
-<article class="card">
+<article class="card coach-card">
+  {image && (
+    <div class="coach-card-photo">
+      <img src={image} alt={name} width="400" height="400" loading="lazy" />
+    </div>
+  )}
   <div class="badge" style="margin-bottom: 0.75rem">Coach</div>
   <h3>{name}</h3>
   <p class="muted" style="margin-bottom: 0.35rem">{role}</p>
