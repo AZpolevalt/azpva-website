@@ -4,14 +4,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout
   title="Calendar"
-  description="AZPVA clinic calendar and reservation info — reserve in the PushPress member app before you arrive."
+  description="AZPVA clinic calendar and reservation info — reserve via PushPress before you arrive."
 >
   <section class="page-hero">
     <div class="container">
       <p class="eyebrow">Members</p>
       <h1>Calendar</h1>
       <p style="color: rgba(255,255,255,0.85); max-width: 55ch">
-        View upcoming clinics and reserve your spot in the PushPress member app.
+        View upcoming clinics below. Members reserve spots through PushPress (install links are sent by staff after enrollment).
       </p>
     </div>
   </section>
@@ -21,12 +21,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="card" style="border-left: 4px solid var(--red)">
         <h2 style="margin-top: 0">Reservation required</h2>
         <p>
-          Elite and Lite members must reserve a clinic spot in the
-          <a href="https://azpva.pushpress.com" target="_blank" rel="noopener noreferrer"><strong>PushPress member app</strong></a>
-          before arriving. Do not show up without a reservation — you risk not being able to vault.
+          Elite and Lite members must <strong>reserve a clinic spot via PushPress</strong> before arriving.
+          Do not show up without a reservation — you risk not being able to vault.
         </p>
         <p class="muted" style="margin-bottom: 0">
-          Need help setting up the member portal? Call or text
+          Need help with reservations or your PushPress account? Call or text
           <a href="tel:+14807666017"><strong>(480) 766-6017</strong></a>.
         </p>
       </div>
@@ -47,8 +46,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         ></iframe>
       </div>
       <p style="margin-top: 1.25rem">
-        <a class="btn btn-primary" href="https://azpva.pushpress.com" target="_blank" rel="noopener noreferrer">Open Member App</a>
-        <a class="btn btn-secondary" href="tel:+14807666017" style="margin-left: 0.5rem">Call for help</a>
+        <a class="btn btn-primary" href="tel:+14807666017">Call for help</a>
+        <a class="btn btn-secondary" href="/contact" style="margin-left: 0.5rem">Contact</a>
       </p>
     </div>
   </section>

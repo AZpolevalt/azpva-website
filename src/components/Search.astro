@@ -1,0 +1,11 @@
+---
+interface Props {
+  id?: string;
+}
+
+const { id = 'pagefind-search' } = Astro.props;
+---
+
+<div class="site-search">
+  <div id={id} class="pagefind-search-root" data-pagefind-mount></div>
+</div>

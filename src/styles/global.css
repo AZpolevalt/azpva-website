@@ -85,15 +85,17 @@ p {
 }
 
 .logo-img {
-  height: 44px;
+  height: 58px;
   width: auto;
-  max-width: min(180px, 42vw);
+  max-width: min(220px, 48vw);
+  aspect-ratio: 640 / 270;
   object-fit: contain;
+  display: block;
 }
 
 .logo-img-footer {
-  height: 52px;
-  max-width: 200px;
+  height: 64px;
+  max-width: 240px;
   margin-bottom: 0.85rem;
 }
 
@@ -101,8 +103,64 @@ p {
   display: inline-block;
 }
 
-.member-app-cta {
-  white-space: nowrap;
+.header-tools {
+  display: none;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+  justify-content: flex-end;
+  min-width: 0;
+}
+
+.header-search {
+  flex: 1;
+  max-width: 260px;
+  min-width: 140px;
+}
+
+.mobile-search {
+  margin-bottom: 0.5rem;
+}
+
+.site-search .pagefind-search-root {
+  --pagefind-ui-scale: 0.8;
+  --pagefind-ui-primary: #c9a227;
+  --pagefind-ui-text: #f5f7fb;
+  --pagefind-ui-background: rgba(255, 255, 255, 0.08);
+  --pagefind-ui-border: rgba(255, 255, 255, 0.2);
+  --pagefind-ui-border-width: 1px;
+  --pagefind-ui-border-radius: 999px;
+  --pagefind-ui-font: inherit;
+}
+
+.site-search .pagefind-ui__form::before {
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.site-search .pagefind-ui__search-input {
+  color: #fff !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  height: 2.5rem !important;
+  padding-left: 2.4rem !important;
+}
+
+.site-search .pagefind-ui__search-input::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.site-search .pagefind-ui__drawer {
+  --pagefind-ui-background: #0b1f3a;
+  --pagefind-ui-text: #f5f7fb;
+  background: #0b1f3a;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  margin-top: 0.35rem;
+  z-index: 50;
+}
+
+.mobile-search .site-search .pagefind-ui__drawer {
+  position: relative;
 }
 
 .coach-credentials {
@@ -153,7 +211,9 @@ p {
 }
 
 .header-cta {
-  display: none;
+  display: inline-flex;
+  flex-shrink: 0;
+  padding: 0.55rem 1rem;
 }
 
 .menu-toggle {
@@ -185,7 +245,7 @@ p {
 
 @media (min-width: 900px) {
   .nav,
-  .header-cta {
+  .header-tools {
     display: flex;
   }
   .menu-toggle,

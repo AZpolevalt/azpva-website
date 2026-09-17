@@ -8,6 +8,7 @@ Marketing site for **Arizona Pole Vault Academy** (Queen Creek, AZ), built with 
 - TypeScript (strict)
 - Content collections: `coaches`, `camps`, `events`
 - Mobile-first athletic UI (no UI framework dependency)
+- Pagefind static site search (build-time index)
 
 ## Local development
 
@@ -25,13 +26,22 @@ npm install
 npm run build
 ```
 
-Output directory: **`dist/`**
+`npm run build` runs `astro build` then **Pagefind** (`pagefind --site dist`) so static search indexes land in `dist/pagefind/`.
+
+Output directory: **`dist/`** (includes `pagefind/` for site search)
 
 Preview locally:
 
 ```bash
 npm run preview
 ```
+
+### Site search (Pagefind)
+
+- Build-time index: generated into `dist/pagefind/` after every production build.
+- UI: header search (desktop + mobile) via Pagefind’s default UI (`/pagefind/pagefind-ui.js`).
+- Cloudflare Pages: keep **Build command** as `npm run build` (no extra dashboard step). The Pagefind step is already in `package.json`.
+- Local `astro dev` will not show search until you run a full `npm run build` (or copy `dist/pagefind` into `public/pagefind` temporarily). Production/preview builds include it.
 
 ## Cloudflare Pages
 
@@ -40,12 +50,12 @@ Do **not** change DNS from this repo. In the Cloudflare dashboard (when ready):
 | Setting | Value |
 |--------|--------|
 | Framework preset | Astro (or None) |
-| Build command | `npm run build` |
+| Build command | `npm run build` (Astro + Pagefind index) |
 | Build output directory | `dist` |
 | Node version | `22` (or latest 22.x) |
 | Root directory | `/` (repo root) |
 
-Environment variables are not required for the static marketing build.
+Environment variables are not required for the static marketing build. Do **not** change DNS from this repo.
 
 Optional: set `NODE_VERSION=22` in Pages environment variables if the default image is older.
 
@@ -81,7 +91,7 @@ Utility pages: `/fall-training`, `/schedule`, `/pole-rentals`, plus membership d
 - Phone: (480) 766-6017
 - Email: arizonapolevaultacademy@gmail.com
 - Address: 23238 S. Via Del Arroyo, Queen Creek, AZ 85142
-- Member app: https://azpva.pushpress.com
+- PushPress: members receive Android/iOS install links from staff messages (no public “Member App” store CTAs on this marketing site)
 
 ## Content updates
 

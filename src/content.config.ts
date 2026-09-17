@@ -24,6 +24,8 @@ const camps = defineCollection({
     price: z.string().optional(),
     status: z.enum(['open', 'full', 'coming-soon', 'closed']).default('open'),
     registerUrl: z.string().url().optional(),
+    registerCommuterUrl: z.string().url().optional(),
+    registerOvernighterUrl: z.string().url().optional(),
     summary: z.string(),
     featured: z.boolean().default(false),
   }),

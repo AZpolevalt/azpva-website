@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && pagefind --site dist",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -19,5 +19,8 @@
   "allowScripts": {
     "esbuild": true
   },
-  "description": "Arizona Pole Vault Academy marketing site (Astro → Cloudflare Pages)"
+  "description": "Arizona Pole Vault Academy marketing site (Astro → Cloudflare Pages)",
+  "devDependencies": {
+    "pagefind": "^1.5.2"
+  }
 }

@@ -12,7 +12,8 @@ export async function getStaticPaths() {
 
 const { camp } = Astro.props;
 const { Content } = await render(camp);
-const registerUrl = camp.data.registerUrl;
+const { registerUrl, registerCommuterUrl, registerOvernighterUrl } = camp.data;
+const hasDualRegister = Boolean(registerCommuterUrl || registerOvernighterUrl);
 ---
 
 <BaseLayout title={camp.data.title} description={camp.data.summary}>
@@ -31,10 +32,23 @@ const registerUrl = camp.data.registerUrl;
     <div class="container prose">
       <Content />
       <p style="margin-top: 2rem; display:flex; flex-wrap:wrap; gap:0.75rem">
-        {registerUrl ? (
+        {hasDualRegister ? (
+          <>
+            {registerCommuterUrl && (
+              <a class="btn btn-primary" href={registerCommuterUrl} target="_blank" rel="noopener noreferrer">
+                Register — Commuter $399
+              </a>
+            )}
+            {registerOvernighterUrl && (
+              <a class="btn btn-primary" href={registerOvernighterUrl} target="_blank" rel="noopener noreferrer">
+                Register — Overnighter $599
+              </a>
+            )}
+          </>
+        ) : registerUrl ? (
           <a class="btn btn-primary" href={registerUrl} target="_blank" rel="noopener noreferrer">Register</a>
-        ) : (
-          <a class="btn btn-primary" href="https://azpva.pushpress.com" target="_blank" rel="noopener noreferrer">Register via PushPress</a>
+        ) : camp.data.status === 'coming-soon' || camp.data.status === 'closed' ? null : (
+          <a class="btn btn-primary" href="tel:+14807666017">Call to register</a>
         )}
         <a class="btn btn-secondary" href="tel:+14807666017">Call (480) 766-6017</a>
         <a class="btn btn-secondary" href="/camps">All camps</a>
