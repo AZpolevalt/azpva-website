@@ -1,17 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CampCard from '../components/CampCard.astro';
-import CoachCard from '../components/CoachCard.astro';
 import { getCollection } from 'astro:content';
 
 const camps = (await getCollection('camps'))
   .sort((a, b) => a.data.startDate.valueOf() - b.data.startDate.valueOf())
   .slice(0, 2);
 
-const coaches = (await getCollection('coaches'))
-  .filter((c) => c.data.featured)
-  .sort((a, b) => a.data.order - b.data.order)
-  .slice(0, 3);
 
 const mailchimpUrl =
   'https://us14.list-manage.com/subscribe?u=99f765b93e9b6d88ae34c2175&id=7b9326d50c';
@@ -137,29 +132,6 @@ const mailchimpUrl =
     </div>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow" style="color: var(--red)">Team</p>
-          <h2>Coaches who live the event</h2>
-        </div>
-        <a class="btn btn-secondary" href="/team">Meet the team</a>
-      </div>
-      <div class="card-grid cols-3">
-        {coaches.map((coach) => (
-          <CoachCard
-            name={coach.data.name}
-            role={coach.data.role}
-            credentials={coach.data.credentials}
-            pbs={coach.data.pbs}
-            image={coach.data.image}
-            href={`/team/${coach.id}`}
-          />
-        ))}
-      </div>
-    </div>
-  </section>
 
   <section class="section" style="background: white; border-block: 1px solid var(--line)" id="email-updates">
     <div class="container">
