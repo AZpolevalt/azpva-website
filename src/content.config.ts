@@ -13,6 +13,7 @@ const coaches = defineCollection({
     image: z.string().optional(),
     portrait: z.string().optional(),
     actionImage: z.string().optional(),
+    gallery: z.array(z.string()).optional(),
     videos: z
       .array(
         z.object({

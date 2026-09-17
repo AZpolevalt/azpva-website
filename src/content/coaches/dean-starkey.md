@@ -6,8 +6,35 @@ pbs: PB 19'5" (5.92m)
 credentials: University of Illinois · World Championships Bronze Medal
 featured: true
 image: /images/coaches/dean-starkey.jpg
-portrait: /images/dean/dean-portrait-web.jpg
-actionImage: /images/dean/dean-vault-action.jpg
+gallery:
+  - /images/dean/gallery/dean-01.png
+  - /images/dean/gallery/dean-02.png
+  - /images/dean/gallery/dean-03.png
+  - /images/dean/gallery/dean-04.png
+  - /images/dean/gallery/dean-05.png
+  - /images/dean/gallery/dean-06.jpeg
+  - /images/dean/gallery/dean-07.jpeg
+  - /images/dean/gallery/dean-08.jpeg
+  - /images/dean/gallery/dean-09.jpeg
+  - /images/dean/gallery/dean-10.jpeg
+  - /images/dean/gallery/dean-11.jpeg
+  - /images/dean/gallery/dean-12.jpeg
+  - /images/dean/gallery/dean-13.jpeg
+  - /images/dean/gallery/dean-14.jpeg
+  - /images/dean/gallery/dean-15.jpeg
+  - /images/dean/gallery/dean-16.jpeg
+  - /images/dean/gallery/dean-17.jpeg
+  - /images/dean/gallery/dean-18.jpeg
+  - /images/dean/gallery/dean-19.jpeg
+  - /images/dean/gallery/dean-20.jpeg
+  - /images/dean/gallery/dean-21.jpeg
+  - /images/dean/gallery/dean-22.jpeg
+  - /images/dean/gallery/dean-23.jpeg
+  - /images/dean/gallery/dean-24.jpeg
+  - /images/dean/gallery/dean-25.webp
+  - /images/dean/gallery/dean-26.webp
+  - /images/dean/gallery/dean-27.webp
+  - /images/dean/dean-vault-action.jpg
 videos:
   - id: LwsBlKL7Ys8
     title: "1997 World Championships - Athens, Greece - Dean Starkey 19'5\" 5.91m, Bronze Medal"
