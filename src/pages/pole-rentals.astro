@@ -4,25 +4,74 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout
   title="Pole Rentals"
-  description="Pole rental information for Arizona Pole Vault Academy athletes via PVR."
+  description="Pole rental information for Arizona Pole Vault Academy athletes via the PVR app — live inventory, meet checkout, and monthly rentals."
 >
   <section class="page-hero">
     <div class="container">
       <p class="eyebrow">Equipment</p>
       <h1>Pole Rentals</h1>
+      <p style="color: rgba(255,255,255,0.85); max-width: 55ch">
+        Rent and check out poles through the PVR app. Call Garrett for questions about sizing and availability.
+      </p>
     </div>
   </section>
   <section class="section">
     <div class="container prose">
       <p>
-        AZPVA maintains a large on-site pole fleet for training. For formal rentals and PVR app coordination, contact staff —
-        Garrett is a primary contact for pole logistics.
+        AZPVA maintains a large on-site pole fleet. We use the
+        <strong>PVR (Pole Vault Rental)</strong> app for checkouts and rentals.
       </p>
+      <p>
+        <a
+          class="btn btn-primary"
+          href="https://pv-rental.web.app/live-inventory/747d588871264423a46bf458cf42414a"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Live pole inventory
+        </a>
+      </p>
+      <p class="muted">
+        Flex numbers on the live inventory use the AZPVA “Gurt” flex scale and may differ from manufacturer flex.
+        Contact us if you need an actual flex reading.
+      </p>
+
+      <h2>Rental options (via PVR)</h2>
       <ul class="list-check">
-        <li>Academy phone: <a href="tel:+14807666017">(480) 766-6017</a></li>
-        <li>Pole / PVR questions: Garrett — <a href="tel:+18058352811">(805) 835-2811</a></li>
+        <li><strong>3-day rental:</strong> Non-club members renting for a single meet — $30 / pole</li>
+        <li>
+          <strong>Meet checkout (Elite members only):</strong> First 3 poles free; each additional pole 50% off
+          standard ($15 / pole). Coupon code posted in the gym for Elite members.
+        </li>
+        <li><strong>Monthly rental:</strong> $99 / month for any pole with free, unlimited exchanges</li>
       </ul>
-      <p>Membership benefits around borrowing poles can differ by Elite vs Lite — confirm details when you enroll.</p>
+
+      <h2>Checkout timing</h2>
+      <p>
+        Ideal checkout time is between club sessions on vault days — typically Tuesday / Thursday around 6pm.
+        If that doesn’t work, contact a coach to arrange another time.
+      </p>
+
+      <h2>Returns</h2>
+      <p>
+        A PVR Tag is posted on the side of the gym by the turf. Check poles in from the app, then tap your phone
+        to the tag to confirm you’re at the facility. Place successfully checked-in poles in the designated turf pile.
+      </p>
+      <p class="muted">
+        Elite meet checkouts: poles checked out for a meet must be returned by the next practice session after your meet.
+      </p>
+
+      <h2>Contacts & apps</h2>
+      <ul class="list-check">
+        <li>Pole / PVR questions: Garrett Starkey — <a href="tel:+18058352811">(805) 835-2811</a></li>
+        <li>Academy phone: <a href="tel:+14807666017">(480) 766-6017</a></li>
+        <li>
+          PVR on
+          <a href="https://apps.apple.com/us/app/pvr/id1658829520" target="_blank" rel="noopener noreferrer">iOS</a>
+          /
+          <a href="https://play.google.com/store/apps/details?id=com.hkaras19.pvr" target="_blank" rel="noopener noreferrer">Android</a>
+        </li>
+      </ul>
     </div>
   </section>
 </BaseLayout>

@@ -12,11 +12,14 @@ const coaches = (await getCollection('coaches'))
   .filter((c) => c.data.featured)
   .sort((a, b) => a.data.order - b.data.order)
   .slice(0, 3);
+
+const mailchimpUrl =
+  'https://us14.list-manage.com/subscribe?u=99f765b93e9b6d88ae34c2175&id=7b9326d50c';
 ---
 
 <BaseLayout
   title="Arizona Pole Vault Academy | Queen Creek Vault Training"
-  description="Vaulting high doesn’t have to be difficult. Elite & Lite memberships, camps, and expert coaching at Arizona Pole Vault Academy in Queen Creek."
+  description="Vaulting high doesn’t have to be difficult. Elite & Lite clinic memberships, camps, and expert coaching at Arizona Pole Vault Academy in Queen Creek."
 >
   <section class="hero">
     <div class="container hero-grid">
@@ -25,7 +28,7 @@ const coaches = (await getCollection('coaches'))
         <h1>Vaulting high doesn’t have to be difficult.</h1>
         <p class="lead">
           Arizona Pole Vault Academy is a specialty facility built for the event —
-          expert coaches, 400+ poles, multiple pits, and memberships that fit serious athletes and developing vaulters alike.
+          expert coaches, 400+ poles, multiple pits, and clinic memberships that fit serious athletes and developing vaulters alike.
         </p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="/memberships">View Memberships</a>
@@ -52,9 +55,9 @@ const coaches = (await getCollection('coaches'))
     <div class="container">
       <div class="section-head">
         <div>
-          <p class="eyebrow" style="color: var(--red)">Memberships</p>
+          <p class="eyebrow" style="color: var(--red)">Clinic memberships</p>
           <h2>Train with a plan that fits</h2>
-          <p class="muted">Enroll by phone. Reserve sessions in the PushPress member app.</p>
+          <p class="muted">Enroll by phone. Reserve clinics in the PushPress member app.</p>
         </div>
         <a class="btn btn-secondary" href="/memberships">Compare plans</a>
       </div>
@@ -65,9 +68,9 @@ const coaches = (await getCollection('coaches'))
           <h3>Elite</h3>
           <p class="price">$349 <span>/ month</span></p>
           <ul class="list-check">
-            <li>Priority access to training sessions</li>
-            <li>Full facility & pole fleet access</li>
-            <li>Best fit for competitive high school & beyond</li>
+            <li>Access to <strong>3 clinics per week</strong></li>
+            <li>Full facility & pole fleet access; meet poles free</li>
+            <li>Ages 10–22 · first-timers need a semi-private first</li>
           </ul>
           <a class="btn btn-primary" href="/memberships/elite">Elite details</a>
         </article>
@@ -77,8 +80,8 @@ const coaches = (await getCollection('coaches'))
           <h3>Lite</h3>
           <p class="price">$199 <span>/ month</span></p>
           <ul class="list-check">
-            <li>Structured membership at a lower monthly rate</li>
-            <li>Great for developing athletes & busy schedules</li>
+            <li>Access to <strong>1 clinic per week</strong></li>
+            <li>Great for multi-sport & busy schedules</li>
             <li>Same coaching staff and Queen Creek facility</li>
           </ul>
           <a class="btn btn-secondary" href="/memberships/lite">Lite details</a>
@@ -91,9 +94,9 @@ const coaches = (await getCollection('coaches'))
     <div class="container">
       <div class="feature-strip">
         <div class="feature"><strong>Specialty facility</strong><span class="muted">Not a side lane at a general practice — vault is the product.</span></div>
-        <div class="feature"><strong>Video & technique</strong><span class="muted">Clear progressions and feedback that sticks between sessions.</span></div>
+        <div class="feature"><strong>Video & technique</strong><span class="muted">Clear progressions and feedback that sticks between clinics.</span></div>
         <div class="feature"><strong>Camps & travel</strong><span class="muted">Fall/Winter camps plus competitive trips like Reno Summit.</span></div>
-        <div class="feature"><strong>Family-friendly ops</strong><span class="muted">Call to enroll; reserve in the app once you’re a member.</span></div>
+        <div class="feature"><strong>Reserve in the app</strong><span class="muted">Call to enroll; reserve clinics in PushPress — don’t arrive without a spot.</span></div>
       </div>
     </div>
   </section>
@@ -121,6 +124,7 @@ const coaches = (await getCollection('coaches'))
       </div>
       <p style="margin-top: 1.25rem">
         Looking for the Mon/Wed fall block? See <a href="/fall-training"><strong>Fall Training</strong></a>.
+        Prefer the live clinic calendar? See <a href="/schedule"><strong>Calendar</strong></a>.
       </p>
     </div>
   </section>
@@ -139,10 +143,38 @@ const coaches = (await getCollection('coaches'))
           <CoachCard
             name={coach.data.name}
             role={coach.data.role}
+            credentials={coach.data.credentials}
             pbs={coach.data.pbs}
             href={`/team/${coach.id}`}
           />
         ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background: white; border-block: 1px solid var(--line)" id="email-updates">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow" style="color: var(--red)">Stay informed</p>
+          <h2>Email updates</h2>
+          <p class="muted">Get AZPVA news, camp dates, and facility updates via Mailchimp.</p>
+        </div>
+      </div>
+      <div class="card subscribe-card">
+        <iframe
+          class="mailchimp-frame"
+          src={mailchimpUrl}
+          title="AZPVA email updates signup"
+          width="100%"
+          height="520"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+        <p class="muted" style="margin: 0.75rem 0 0">
+          Prefer a new tab?
+          <a href={mailchimpUrl} target="_blank" rel="noopener noreferrer">Open the signup form</a>.
+        </p>
       </div>
     </div>
   </section>
@@ -153,12 +185,12 @@ const coaches = (await getCollection('coaches'))
         <div>
           <h2 style="margin-bottom: 0.4rem">Ready to start?</h2>
           <p style="margin: 0; color: rgba(255,255,255,0.9)">
-            Call to discuss Elite or Lite, or open the PushPress app if you’re already a member.
+            Call to discuss Elite or Lite clinics, or open the PushPress app if you’re already a member.
           </p>
         </div>
         <div style="display:flex; flex-wrap:wrap; gap:0.75rem">
           <a class="btn btn-gold" href="tel:+14807666017">Call (480) 766-6017</a>
-          <a class="btn btn-ghost" href="https://azpva.pushpress.com" target="_blank" rel="noopener noreferrer">Member App</a>
+          <a class="btn btn-ghost member-app-cta" href="https://azpva.pushpress.com" target="_blank" rel="noopener noreferrer">Member App</a>
         </div>
       </div>
     </div>

@@ -3,28 +3,53 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
-  title="Schedule"
-  description="How to reserve AZPVA training sessions in the PushPress member app."
+  title="Calendar"
+  description="AZPVA clinic calendar and reservation info — reserve in the PushPress member app before you arrive."
 >
   <section class="page-hero">
     <div class="container">
       <p class="eyebrow">Members</p>
-      <h1>Schedule & Reservations</h1>
+      <h1>Calendar</h1>
+      <p style="color: rgba(255,255,255,0.85); max-width: 55ch">
+        View upcoming clinics and reserve your spot in the PushPress member app.
+      </p>
     </div>
   </section>
-  <section class="section">
-    <div class="container prose">
-      <p>
-        Session times and open slots live in the
-        <a href="https://azpva.pushpress.com" target="_blank" rel="noopener noreferrer"><strong>PushPress member app</strong></a>.
-        New athletes: call to enroll first, then staff will help you get logged in.
+
+  <section class="section" style="padding-bottom: 1.5rem">
+    <div class="container">
+      <div class="card" style="border-left: 4px solid var(--red)">
+        <h2 style="margin-top: 0">Reservation required</h2>
+        <p>
+          Elite and Lite members must reserve a clinic spot in the
+          <a href="https://azpva.pushpress.com" target="_blank" rel="noopener noreferrer"><strong>PushPress member app</strong></a>
+          before arriving. Do not show up without a reservation — you risk not being able to vault.
+        </p>
+        <p class="muted" style="margin-bottom: 0">
+          Need help setting up the member portal? Call or text
+          <a href="tel:+14807666017"><strong>(480) 766-6017</strong></a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 0">
+    <div class="container">
+      <div class="calendar-frame-wrap">
+        <iframe
+          class="calendar-frame"
+          src="https://azpva.pushpress.com/open/calendar?framed=1"
+          title="AZPVA calendar"
+          width="100%"
+          height="1200"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+      <p style="margin-top: 1.25rem">
+        <a class="btn btn-primary" href="https://azpva.pushpress.com" target="_blank" rel="noopener noreferrer">Open Member App</a>
+        <a class="btn btn-secondary" href="tel:+14807666017" style="margin-left: 0.5rem">Call for help</a>
       </p>
-      <ol>
-        <li>Enroll by phone: <a href="tel:+14807666017">(480) 766-6017</a></li>
-        <li>Open <a href="https://azpva.pushpress.com" target="_blank" rel="noopener noreferrer">azpva.pushpress.com</a></li>
-        <li>Reserve upcoming sessions according to your membership rules</li>
-      </ol>
-      <p><a class="btn btn-primary" href="https://azpva.pushpress.com" target="_blank" rel="noopener noreferrer">Open Member App</a></p>
     </div>
   </section>
 </BaseLayout>

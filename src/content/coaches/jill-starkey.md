@@ -3,7 +3,7 @@ name: Jill Starkey
 role: Coach
 order: 3
 pbs: PB 14'1" (4.32m)
-credentials: World Masters Champion · Olympic Trials
+credentials: World Masters Champion · Olympic Trials · Athlete-first fundamentals
 featured: true
 ---
 

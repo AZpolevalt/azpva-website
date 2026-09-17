@@ -3,16 +3,18 @@ interface Props {
   name: string;
   role: string;
   pbs?: string;
+  credentials?: string;
   href?: string;
 }
 
-const { name, role, pbs, href } = Astro.props;
+const { name, role, pbs, credentials, href } = Astro.props;
 ---
 
 <article class="card">
   <div class="badge" style="margin-bottom: 0.75rem">Coach</div>
   <h3>{name}</h3>
-  <p class="muted" style="margin-bottom: 0.5rem">{role}</p>
-  {pbs && <p><strong>PB / focus:</strong> {pbs}</p>}
+  <p class="muted" style="margin-bottom: 0.35rem">{role}</p>
+  {credentials && <p class="coach-credentials">{credentials}</p>}
+  {pbs && <p><strong>PB:</strong> {pbs}</p>}
   {href && <a class="btn btn-secondary" href={href} style="margin-top: 0.5rem">View profile</a>}
 </article>

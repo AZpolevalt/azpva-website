@@ -26,6 +26,7 @@ const coaches = (await getCollection('coaches')).sort((a, b) => a.data.order - b
           <CoachCard
             name={coach.data.name}
             role={coach.data.role}
+            credentials={coach.data.credentials}
             pbs={coach.data.pbs}
             href={`/team/${coach.id}`}
           />

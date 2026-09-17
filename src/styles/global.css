@@ -80,17 +80,58 @@ p {
 
 .logo {
   display: flex;
-  flex-direction: column;
-  font-weight: 800;
-  letter-spacing: 0.02em;
+  align-items: center;
+  flex-shrink: 0;
 }
 
-.logo span {
-  font-size: 0.72rem;
-  font-weight: 600;
-  color: var(--gold);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+.logo-img {
+  height: 44px;
+  width: auto;
+  max-width: min(180px, 42vw);
+  object-fit: contain;
+}
+
+.logo-img-footer {
+  height: 52px;
+  max-width: 200px;
+  margin-bottom: 0.85rem;
+}
+
+.footer-logo {
+  display: inline-block;
+}
+
+.member-app-cta {
+  white-space: nowrap;
+}
+
+.coach-credentials {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin: 0 0 0.5rem;
+}
+
+.calendar-frame-wrap,
+.subscribe-card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.calendar-frame,
+.mailchimp-frame {
+  display: block;
+  width: 100%;
+  border: 0;
+  background: white;
+}
+
+.parking-map {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
 }
 
 .nav {

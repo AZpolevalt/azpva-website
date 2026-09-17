@@ -1,34 +1,54 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const registerUrl =
+  'https://azpva.pushpress.com/landing/plans/plan_a99a24b99fbb46/eyJzdGFydF9kYXRlIjoiMDkvMDIvMjAyNiJ9/login';
 ---
 
 <BaseLayout
   title="Fall Training"
-  description="AZPVA Fall Training 2026 — September 2 to December 23, Monday and Wednesday 5:00–6:30pm, capped at 20 athletes."
+  description="AZPVA Fall Training 2026 — September 2 to December 23, Monday and Wednesday 5:00–6:30pm, capped at 20 athletes. Register via PushPress."
 >
   <section class="page-hero">
     <div class="container">
       <p class="eyebrow">Seasonal program</p>
       <h1>Fall Training 2026</h1>
-      <p style="color: rgba(255,255,255,0.85)">September 2 – December 23, 2026</p>
+      <p style="color: rgba(255,255,255,0.85)">September 2 – December 23, 2026 · Mondays & Wednesdays · 5:00–6:30pm</p>
     </div>
   </section>
   <section class="section">
     <div class="container prose">
       <p>
-        Fall Training is AZPVA’s capped evening block for athletes who want consistent Mon/Wed vault development heading into indoor and spring seasons.
+        Fall is one of the most important times of the year for pole vaulters — building speed, strength, conditioning,
+        body control, and vault-specific foundation before indoor and outdoor seasons. The AZPVA Fall Training program
+        is designed to help athletes make real progress before competition pressure begins.
       </p>
       <ul class="list-check">
-        <li><strong>Days:</strong> Monday & Wednesday</li>
+        <li><strong>Dates:</strong> September 2 – December 23, 2026</li>
+        <li><strong>Days:</strong> Every Monday & Wednesday</li>
         <li><strong>Time:</strong> 5:00–6:30pm</li>
-        <li><strong>Roster cap:</strong> 20 athletes</li>
-        <li><strong>Location:</strong> 23238 S. Via Del Arroyo, Queen Creek</li>
+        <li><strong>Roster cap:</strong> 20 vaulters</li>
+        <li><strong>Eligibility:</strong> Open to ability levels ages 10–22</li>
+        <li><strong>Location:</strong> 23238 S. Via Del Arroyo, Queen Creek, AZ 85142</li>
+        <li><strong>Led by:</strong> Dean Starkey and Garrett Starkey</li>
       </ul>
+
+      <h2>Training focus</h2>
+      <ul class="list-check">
+        <li>Speed development, strength, and conditioning</li>
+        <li>Vault-specific strength, gymnastics, and body control</li>
+        <li>Running mechanics, explosive power, and core strength</li>
+        <li>Injury prevention and technical preparation for the upcoming season</li>
+      </ul>
+
+      <h2>Register</h2>
       <p>
-        Call <a href="tel:+14807666017"><strong>(480) 766-6017</strong></a> for availability and how Fall Training pairs with Elite or Lite membership.
+        Register with the PushPress link below, or through the AZPVA app under memberships.
+        Questions? Call <a href="tel:+14807666017"><strong>(480) 766-6017</strong></a>.
       </p>
       <p>
-        <a class="btn btn-primary" href="/memberships">Memberships</a>
+        <a class="btn btn-primary" href={registerUrl} target="_blank" rel="noopener noreferrer">Register for Fall Training</a>
+        <a class="btn btn-secondary" href="/memberships" style="margin-left: 0.5rem">Memberships</a>
         <a class="btn btn-secondary" href="/camps" style="margin-left: 0.5rem">Camps hub</a>
       </p>
     </div>

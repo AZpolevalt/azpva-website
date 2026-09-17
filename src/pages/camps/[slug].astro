@@ -12,6 +12,7 @@ export async function getStaticPaths() {
 
 const { camp } = Astro.props;
 const { Content } = await render(camp);
+const registerUrl = camp.data.registerUrl;
 ---
 
 <BaseLayout title={camp.data.title} description={camp.data.summary}>
@@ -29,9 +30,14 @@ const { Content } = await render(camp);
   <section class="section">
     <div class="container prose">
       <Content />
-      <p style="margin-top: 2rem">
-        <a class="btn btn-primary" href="tel:+14807666017">Call to register</a>
-        <a class="btn btn-secondary" href="/camps" style="margin-left: 0.5rem">All camps</a>
+      <p style="margin-top: 2rem; display:flex; flex-wrap:wrap; gap:0.75rem">
+        {registerUrl ? (
+          <a class="btn btn-primary" href={registerUrl} target="_blank" rel="noopener noreferrer">Register</a>
+        ) : (
+          <a class="btn btn-primary" href="https://azpva.pushpress.com" target="_blank" rel="noopener noreferrer">Register via PushPress</a>
+        )}
+        <a class="btn btn-secondary" href="tel:+14807666017">Call (480) 766-6017</a>
+        <a class="btn btn-secondary" href="/camps">All camps</a>
       </p>
     </div>
   </section>

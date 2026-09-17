@@ -37,6 +37,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div style="display:flex; flex-wrap:wrap; gap:0.75rem; margin-top: 1rem">
           <a class="btn btn-primary" href="tel:+14807666017">Call now</a>
           <a class="btn btn-secondary" href="mailto:arizonapolevaultacademy@gmail.com">Email</a>
+          <a class="btn btn-secondary" href="https://azpva.pushpress.com/open/interested/" target="_blank" rel="noopener noreferrer">Interest form</a>
           <a class="btn btn-secondary" href="https://azpva.pushpress.com" target="_blank" rel="noopener noreferrer">Member App</a>
         </div>
       </div>
@@ -57,6 +58,59 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 0" id="parking">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow" style="color: var(--red)">Visit</p>
+          <h2>Where to park</h2>
+          <p class="muted">Use this diagram when you arrive at the Queen Creek facility.</p>
+        </div>
+      </div>
+      <figure class="card" style="padding: 1rem">
+        <img
+          src="/images/where-to-go.png"
+          alt="Map showing where to go and park at Arizona Pole Vault Academy"
+          class="parking-map"
+          loading="lazy"
+        />
+        <figcaption class="muted" style="margin-top: 0.75rem">
+          Parking and arrival diagram for 23238 S. Via Del Arroyo, Queen Creek, AZ 85142.
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 0" id="bad-weather-parking">
+    <div class="container prose" style="max-width: 75ch">
+      <p class="eyebrow" style="color: var(--red)">Protocol</p>
+      <h2>Bad weather parking protocol</h2>
+      <p>
+        When the horse arena (our usual parking lot) is flooded, we use a tighter parking plan to reduce congestion
+        on the blacktop and neighborhood streets. We keep a low profile out of respect for our neighbors.
+      </p>
+      <h3>What to do when the arena is out of commission</h3>
+      <ul class="list-check">
+        <li><strong>Carpool if possible.</strong> We try to send a heads-up ahead of time when we can.</li>
+        <li><strong>Drop off and pick up in front of our property.</strong> Do not pull down the driveway — that can create a traffic jam.</li>
+        <li><strong>Early vault practice:</strong> leave promptly when your session ends so the next group can park.</li>
+        <li><strong>Park efficiently.</strong> Pull all the way forward and avoid leaving large gaps between cars.</li>
+        <li><strong>Allowed parking:</strong> in front of our property (okay to block trailers) and in our front courtyard.</li>
+      </ul>
+      <p>
+        <strong>Never park or wait on or in front of a neighbor’s property</strong> — including when the arena is open.
+        All waiting should be done in front of our property only.
+      </p>
+      <p class="muted">
+        During flooded-arena periods we may also reduce AZPVA clinic spots (for example from 30 to 20) and adjust
+        related weight-lifting club sessions as needed. Thank you for helping us be good neighbors.
+      </p>
+      <p>
+        Questions? Call <a href="tel:+14807666017"><strong>(480) 766-6017</strong></a>.
+      </p>
     </div>
   </section>
 </BaseLayout>

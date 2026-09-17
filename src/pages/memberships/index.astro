@@ -3,15 +3,15 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
-  title="Memberships"
-  description="Compare Elite ($349/mo) and Lite ($199/mo) memberships at Arizona Pole Vault Academy, plus semi-private and drop-in options."
+  title="Memberships & Clinics"
+  description="Compare Elite ($349/mo, 3 clinics/week) and Lite ($199/mo, 1 clinic/week) at Arizona Pole Vault Academy, plus semi-private and drop-in options."
 >
   <section class="page-hero">
     <div class="container">
       <p class="eyebrow">Join AZPVA</p>
-      <h1>Memberships</h1>
+      <h1>Memberships & Clinics</h1>
       <p class="lead" style="color: rgba(255,255,255,0.85); max-width: 50ch">
-        Enroll by phone. Once you’re a member, reserve sessions in the
+        Elite and Lite are month-to-month clinic memberships. Enroll by phone, then reserve clinics in the
         <a href="https://azpva.pushpress.com" target="_blank" rel="noopener noreferrer" style="color: var(--gold)">PushPress app</a>.
       </p>
     </div>
@@ -19,30 +19,40 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
   <section class="section">
     <div class="container">
+      <p class="muted" style="max-width: 70ch; margin-bottom: 1.5rem">
+        There are no long-term commitments and no penalties for downgrading or canceling. To cancel or downgrade,
+        text/call <a href="tel:+14807666017">(480) 766-6017</a> or email
+        <a href="mailto:arizonapolevaultacademy@gmail.com">arizonapolevaultacademy@gmail.com</a>
+        at least <strong>2 days before the end of the month</strong> and wait for a confirmation.
+      </p>
+
       <div class="card-grid cols-2">
         <article class="card">
           <h3>Elite</h3>
           <p class="price">$349 <span>/ month</span></p>
-          <p>Our flagship membership for athletes who want consistent access, full facility use, and competitive preparation.</p>
+          <p>Our most popular clinic membership — access to <strong>3 clinics per week</strong> with full facility and pole inventory access.</p>
           <ul class="list-check">
-            <li>Priority training access</li>
-            <li>Full pole fleet & pits</li>
-            <li>Best for competitive HS / collegiate</li>
+            <li>3 coached clinics / week</li>
+            <li>Ages 10–22 (beginner to expert)*</li>
+            <li>Borrow poles for meets free of charge</li>
+            <li>First-timers: semi-private required before group clinics</li>
           </ul>
           <a class="btn btn-primary" href="/memberships/elite">Elite details</a>
         </article>
         <article class="card">
           <h3>Lite</h3>
           <p class="price">$199 <span>/ month</span></p>
-          <p>A flexible membership for developing athletes and families who want AZPVA coaching without the Elite monthly commitment.</p>
+          <p>For vaulters balancing other sports and activities — access to <strong>1 clinic per week</strong> (choose which clinic each week).</p>
           <ul class="list-check">
-            <li>Lower monthly rate</li>
-            <li>Same coaching staff & facility</li>
-            <li>Ideal for developing schedules</li>
+            <li>1 coached clinic / week</li>
+            <li>Ages 10–22 (beginner to expert)*</li>
+            <li>Extensive pole inventory access</li>
+            <li>First-timers: semi-private required before group clinics</li>
           </ul>
           <a class="btn btn-secondary" href="/memberships/lite">Lite details</a>
         </article>
       </div>
+      <p class="muted" style="margin-top: 0.75rem">* Post-collegiate and masters vaulters: call for additional training options.</p>
 
       <div class="table-wrap" style="margin-top: 2rem">
         <table class="compare">
@@ -57,26 +67,26 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           <tbody>
             <tr>
               <td><strong>Elite</strong></td>
-              <td>~$349 / mo</td>
-              <td>Competitive weekly training</td>
+              <td>$349 / mo · 3 clinics/week</td>
+              <td>Competitive weekly clinic volume</td>
               <td><a href="/memberships/elite">Details</a></td>
             </tr>
             <tr>
               <td><strong>Lite</strong></td>
-              <td>~$199 / mo</td>
-              <td>Developing / flexible schedules</td>
+              <td>$199 / mo · 1 clinic/week</td>
+              <td>Developing / busy multi-sport schedules</td>
               <td><a href="/memberships/lite">Details</a></td>
             </tr>
             <tr>
               <td><strong>Semi-Private</strong></td>
-              <td>$99 + packs</td>
-              <td>First-timers & focused technique</td>
+              <td>Packs available</td>
+              <td>First-timers & focused technique (max 3–4)</td>
               <td><a href="/memberships/semi-private">Details</a></td>
             </tr>
             <tr>
               <td><strong>Drop-in</strong></td>
-              <td>$55 / session</td>
-              <td>Visiting athletes</td>
+              <td>$55 / clinic</td>
+              <td>Visiting athletes (space permitting)</td>
               <td><a href="/memberships/drop-in">Details</a></td>
             </tr>
           </tbody>
@@ -86,7 +96,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       <div class="cta-band" style="margin-top: 2rem">
         <div>
           <h2 style="margin:0 0 0.4rem">Enroll by phone</h2>
-          <p style="margin:0; color: rgba(255,255,255,0.9)">Staff will help you pick Elite vs Lite and get you into the member app.</p>
+          <p style="margin:0; color: rgba(255,255,255,0.9)">Staff will help you pick Elite vs Lite and get you into the member app to reserve clinics.</p>
         </div>
         <a class="btn btn-gold" href="tel:+14807666017">(480) 766-6017</a>
       </div>
