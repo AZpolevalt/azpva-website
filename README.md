@@ -49,6 +49,22 @@ Environment variables are not required for the static marketing build.
 
 Optional: set `NODE_VERSION=22` in Pages environment variables if the default image is older.
 
+
+## Cloudflare Pages — 404 behavior (important)
+
+Cloudflare Pages treats a **missing top-level `404.html`** as an SPA: unknown paths are rewritten to `/` with **HTTP 200** (soft 404). That is the bug Riley reported.
+
+**Fix in this repo:** `src/pages/404.astro` builds to **`dist/404.html`**. With that file present at the site root, Pages serves a real **HTTP 404** for unknown routes (closest `404.html` walking up the path).
+
+| Artifact | Needed? | Notes |
+|----------|---------|--------|
+| `src/pages/404.astro` → `dist/404.html` | **Yes** | Astro-recommended custom 404; required so Pages does not fall back to SPA/`/` |
+| `public/_redirects` | No | Not required for correct 404s on pure static hosting |
+| `public/_routes.json` | No | Functions/advanced routing only; not used for this static marketing site |
+| Extra root `public/404.html` | No | Would duplicate Astro’s build output; prefer `src/pages/404.astro` |
+
+No Cloudflare dashboard or DNS changes are required for this fix — redeploy the build that includes `dist/404.html`.
+
 ## Site map (primary nav)
 
 - `/` — Home
@@ -64,7 +80,7 @@ Utility pages: `/fall-training`, `/schedule`, `/pole-rentals`, plus membership d
 
 - Phone: (480) 766-6017
 - Email: arizonapolevaultacademy@gmail.com
-- Address: 23238 S Via Del Arroyo, Queen Creek, AZ 85142
+- Address: 23238 S. Via Del Arroyo, Queen Creek, AZ 85142
 - Member app: https://azpva.pushpress.com
 
 ## Content updates

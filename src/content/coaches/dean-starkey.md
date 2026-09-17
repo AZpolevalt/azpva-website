@@ -1,10 +1,10 @@
 ---
 name: Dean Starkey
-role: Founder & Head Coach
+role: Head Coach/Director
 order: 1
-pbs: Olympic Trials finalist; multi-time USA Championships medalist
-credentials: Decades of elite coaching experience across high school, collegiate, and post-collegiate athletes
+pbs: PB 19'5" (5.92m)
+credentials: University of Illinois · World Championships Bronze Medal
 featured: true
 ---
 
-Dean founded Arizona Pole Vault Academy to give Arizona athletes a true specialty home for the event — technique-first coaching, a deep pole inventory, and a culture that treats vaulting as a craft. Athletes and parents know him for clear progressions, honest feedback, and a facility built around the event instead of squeezed into a general track practice.
+Dean leads Arizona Pole Vault Academy as Head Coach/Director. A University of Illinois alum and World Championships bronze medalist with a personal best of 19'5" (5.92m), he built AZPVA around technique-first coaching, a deep pole inventory, and a facility designed for the event. Athletes and parents know him for clear progressions, honest feedback, and a culture that treats vaulting as a craft.

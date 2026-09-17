@@ -1,10 +1,10 @@
 ---
 name: Nathan Hiett
-role: Coach
+role: Coach/Marketing Director
 order: 4
-pbs: High school & club coaching
-credentials: Technique sessions and group training support
+pbs: PB 17'7 1/4" (5.37m)
+credentials: Arizona State · Pac-12 Runner-up
 featured: false
 ---
 
-Nathan coaches across AZPVA group sessions with an emphasis on consistent technical cues, safe progressions, and competitive preparation for the high school calendar.
+Nathan is Coach/Marketing Director at AZPVA. An Arizona State alum and Pac-12 runner-up with a personal best of 17'7 1/4" (5.37m), he coaches across group sessions with an emphasis on consistent technical cues, safe progressions, and competitive preparation for the high school calendar.

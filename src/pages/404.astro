@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Page not found"
+  description="The page you requested could not be found on the Arizona Pole Vault Academy website."
+>
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">404</p>
+      <h1>Page not found</h1>
+      <p style="color: rgba(255,255,255,0.85); max-width: 50ch">
+        That URL isn’t on this site. Head home, browse memberships, or contact the academy.
+      </p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container" style="display:flex; flex-wrap:wrap; gap:0.75rem">
+      <a class="btn btn-primary" href="/">Home</a>
+      <a class="btn btn-secondary" href="/memberships">Memberships</a>
+      <a class="btn btn-secondary" href="/team">Team</a>
+      <a class="btn btn-secondary" href="/contact">Contact</a>
+    </div>
+  </section>
+</BaseLayout>
