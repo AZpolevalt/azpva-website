@@ -1,7 +1,7 @@
 ---
 name: Tray Oates
 role: Coach/Facilities Director
-order: 5
+order: 3
 pbs: "PB 19'1\" (5.82m)"
 credentials: Samford University · 4th USA Indoor Championships
 featured: false
