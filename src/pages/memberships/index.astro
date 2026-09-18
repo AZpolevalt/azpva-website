@@ -57,12 +57,14 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       <div class="card-grid cols-2" style="margin-top: 1.5rem">
         <article class="card">
           <h3>Semi-Private</h3>
-          <p>Focused small-group sessions (max 3–4). Ideal for first-timers before Elite/Lite.</p>
+          <p class="price">$99 <span>/ session</span></p>
+          <p>Focused small-group sessions (max 3–4). Packages: 5 for $399 · 10 for $749.</p>
           <a class="btn btn-secondary" href="/memberships/semi-private">Semi-private details</a>
         </article>
         <article class="card">
           <h3>Mini Clinic</h3>
-          <p>Same pricing as semi-private, with <strong>3–5 athletes</strong> for NCAA-safe group coaching. Dates posted 14 days ahead.</p>
+          <p class="price">$99 <span>/ session</span></p>
+          <p>Same pricing as semi-private, with <strong>3–5 athletes</strong> for NCAA-safe group coaching. Packages: 5 for $399 · 10 for $749. Dates posted 14 days ahead.</p>
           <ul class="list-check">
             <li>Fri Oct 2 · 5:00–6:30 PM</li>
             <li>Fri Oct 16 · 5:00–6:30 PM</li>
@@ -96,13 +98,13 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             </tr>
             <tr>
               <td><strong>Semi-Private</strong></td>
-              <td>Packs available</td>
+              <td>$99 · packs $399 / $749</td>
               <td>First-timers & focused technique (max 3–4)</td>
               <td><a href="/memberships/semi-private">Details</a></td>
             </tr>
             <tr>
               <td><strong>Mini Clinic</strong></td>
-              <td>Same as semi-private</td>
+              <td>$99 · packs $399 / $749</td>
               <td>Small group · min 3 / max 5 (NCAA-safe)</td>
               <td><a href="/memberships/mini-clinic">Details</a></td>
             </tr>
@@ -115,6 +117,10 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           </tbody>
         </table>
       </div>
+
+      <p class="muted" style="margin-top: 1.5rem">
+        Full Elite/Lite policies: <a href="/memberships/terms"><strong>Membership Terms</strong></a>.
+      </p>
 
       <div class="cta-band" style="margin-top: 2rem">
         <div>
