@@ -1,0 +1,65 @@
+# Old PowerDNN / DNN paths → new Astro routes (301)
+/Home / 301
+/Home/tabid/545/Default.aspx / 301
+/Home/tabid/545 / 301
+
+/Coaches /team 301
+/Coaches/tabid/542/Default.aspx /team 301
+/Coaches/tabid/542 /team 301
+/Team /team 301
+/Team/tabid/542/Default.aspx /team 301
+
+/Coaches/DeanStarkey /team/dean-starkey 301
+/Coaches/JillStarkey /team/jill-starkey 301
+/Coaches/GarrettStarkey /team/garrett-starkey 301
+/Coaches/NathanHiett /team/nathan-hiett 301
+/Coaches/NathanHiett/tabid/555/Default.aspx /team/nathan-hiett 301
+/Coaches/TrayOates /team/tray-oates 301
+/Coaches/MichaelHeck /team/michael-heck 301
+
+/Contact /contact 301
+/Contact/tabid/546/Default.aspx /contact 301
+/Contact/tabid/546 /contact 301
+/Contact/ParkingatAZPVA /contact 301
+/Contact/ParkingatAZPVA/tabid/601/Default.aspx /contact 301
+
+/Calendar /schedule 301
+/Calendar/tabid/544/Default.aspx /schedule 301
+/Calendar/tabid/544 /schedule 301
+
+/Memberships /memberships 301
+/Memberships/tabid/572/Default.aspx /memberships 301
+/Services/tabid/572/Default.aspx /memberships 301
+/Programs/VaultingOptions /memberships 301
+/Programs/VaultingOptions/tabid/598/Default.aspx /memberships 301
+/Programs/EliteClubMembership /memberships/elite 301
+/Programs/EliteClubMembership/tabid/572/Default.aspx /memberships/elite 301
+/Programs/VaultingOptions/EliteClubMembership /memberships/elite 301
+/Programs/VaultingOptions/EliteClubMembership/tabid/572/Default.aspx /memberships/elite 301
+/Programs/Trainingoptions/LiteClubMembership /memberships/lite 301
+/Programs/Trainingoptions/LiteClubMembership/tabid/573/Default.aspx /memberships/lite 301
+/Programs/VaultingOptions/LiteClubMembership /memberships/lite 301
+/Programs/VaultingOptions/LiteClubMembership/tabid/573/Default.aspx /memberships/lite 301
+/Programs/Trainingoptions/Semi-PrivateSessions /memberships/semi-private 301
+/Programs/Trainingoptions/Semi-PrivateSessions/tabid/575/Default.aspx /memberships/semi-private 301
+/Programs/Trainingoptions/Drop-inSessions /memberships/drop-in 301
+/Programs/Trainingoptions/Drop-inSessions/tabid/576/Default.aspx /memberships/drop-in 301
+
+/Programs/Camps /camps 301
+/Programs/Camps/tabid/568/Default.aspx /camps 301
+/Programs/Camps/FallCamp /camps/fall-camp-2026 301
+/Programs/Camps/FallCamp/tabid/599/Default.aspx /camps/fall-camp-2026 301
+/Programs/Camps/WinterCamp /camps/winter-camp-2026 301
+/Programs/Camps/WinterCamp/tabid/549/Default.aspx /camps/winter-camp-2026 301
+
+/EmailUpdatesSign-upList /#email-updates 301
+/EmailUpdatesSign-upList/tabid/562/Default.aspx /#email-updates 301
+/Newsletters /#email-updates 301
+/Newsletters/tabid/567/Default.aspx /#email-updates 301
+
+# Common clean paths people may bookmark
+/elite /memberships/elite 301
+/lite /memberships/lite 301
+/semi-private /memberships/semi-private 301
+/drop-in /memberships/drop-in 301
+/coaches /team 301
