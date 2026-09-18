@@ -1032,3 +1032,21 @@ p {
 .ask-maya-fallback-note code {
   font-size: 0.8em;
 }
+
+
+.footer-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.65rem;
+  align-items: center;
+  margin-top: 0.85rem;
+}
+
+.footer-social a {
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.footer-social span {
+  color: rgba(255, 255, 255, 0.35);
+}
