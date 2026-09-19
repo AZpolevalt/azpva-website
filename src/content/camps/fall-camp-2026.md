@@ -7,15 +7,15 @@ price: Commuter $399 · Overnighter $599
 status: open
 registerCommuterUrl: https://azpva.pushpress.com/landing/events/cal-7458d482eb984059bdbc737d2967/login
 registerOvernighterUrl: https://azpva.pushpress.com/landing/events/cal-46ab3082a4634f12b2f07bf4ee28/login
-summary: Two-day fall camp (Oct 24–25, 2026) at the Queen Creek facility — choose Commuter ($399) or Overnighter ($599) with meals and ranch lodging.
+summary: Two-day fall camp (Oct 24–25, 2026) at the Queen Creek facility — open to all skill levels. Choose Commuter ($399) or Overnighter ($599) with meals and ranch lodging.
 featured: true
 ---
 
-Arizona Pole Vault Academy offers a 2-day pole vault camp where vaulters of all levels can learn and enjoy. Camp immerses athletes in a hands-on, personalized approach to every aspect of becoming the best pole vaulter they can be.
+Arizona Pole Vault Academy offers a 2-day pole vault camp open to all skill levels — beginners through advanced. Vaulters of every experience level can learn and enjoy. Camp immerses athletes in a hands-on, personalized approach to every aspect of becoming the best pole vaulter they can be.
 
 **Dates:** October 24–25, 2026  
 **Location:** Arizona Pole Vault Academy · 23238 S. Via Del Arroyo, Queen Creek, AZ 85142  
-**Eligibility:** Typically boys and girls ages 12–18. Exceptions may be made case-by-case.
+**Eligibility:** Open to all skill levels. Typically boys and girls ages 12–18. Exceptions may be made case-by-case.
 
 ## Pricing & what’s included
 

@@ -7,15 +7,15 @@ price: Commuter $399 · Overnighter $599
 status: open
 registerCommuterUrl: https://azpva.pushpress.com/landing/events/cal-c5f381c0a01149f29308cb08a1b8/login
 registerOvernighterUrl: https://azpva.pushpress.com/landing/events/cal-16804fb370b54ef8941b5b2b9560/login
-summary: End-of-year winter camp (Dec 29–30, 2026) — Commuter ($399) or Overnighter ($599) with meals, technical resets, and indoor prep between holiday travel and spring.
+summary: End-of-year winter camp (Dec 29–30, 2026) — open to all skill levels. Commuter ($399) or Overnighter ($599) with meals, technical resets, and indoor prep between holiday travel and spring.
 featured: true
 ---
 
-Arizona Pole Vault Academy offers a 2-day pole vault camp where vaulters of all levels can learn and enjoy. Camp immerses athletes in a hands-on, personalized approach to every aspect of becoming the best pole vaulter they can be.
+Arizona Pole Vault Academy offers a 2-day pole vault camp open to all skill levels — beginners through advanced. Vaulters of every experience level can learn and enjoy. Camp immerses athletes in a hands-on, personalized approach to every aspect of becoming the best pole vaulter they can be.
 
 **Dates:** December 29–30, 2026  
 **Location:** Arizona Pole Vault Academy · 23238 S. Via Del Arroyo, Queen Creek, AZ 85142  
-**Eligibility:** Typically boys and girls ages 12–18. Exceptions may be made case-by-case.
+**Eligibility:** Open to all skill levels. Typically boys and girls ages 12–18. Exceptions may be made case-by-case.
 
 ## Pricing & what’s included
 
