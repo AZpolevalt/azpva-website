@@ -573,8 +573,105 @@ p {
   max-width: min(100%, 56rem);
 }
 
-.prose:has(.table-wrap) > :not(.table-wrap) {
+.prose:has(.table-wrap) > :not(.table-wrap):not(.honors) {
   max-width: 70ch;
+}
+
+.honors {
+  display: grid;
+  gap: 0.85rem;
+  width: 100%;
+  margin: 0.35rem 0 0.4rem;
+}
+
+@media (min-width: 700px) {
+  .honors {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.honors-card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  border-top-width: 3px;
+  padding: 0.95rem 1rem 1.05rem;
+  box-shadow: 0 10px 28px rgba(11, 31, 58, 0.06);
+}
+
+.honors-card-gold {
+  border-top-color: var(--gold);
+}
+
+.honors-card-silver {
+  border-top-color: #a8b1be;
+}
+
+.honors-card-bronze {
+  border-top-color: #b8733a;
+}
+
+.honors-card-usa {
+  border-top-color: var(--red);
+}
+
+.honors-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 0.7rem;
+  font-size: 1.05rem;
+  color: var(--navy);
+}
+
+.honors-icon {
+  width: 1.35rem;
+  height: 1.35rem;
+  flex: 0 0 auto;
+  display: block;
+}
+
+.honors-card-gold .honors-icon {
+  color: #b8860b;
+}
+
+.honors-card-silver .honors-icon {
+  color: #7e8896;
+}
+
+.honors-card-bronze .honors-icon {
+  color: #9a5c2e;
+}
+
+.honors-card-usa .honors-icon {
+  color: var(--navy);
+}
+
+.honors-card ul {
+  margin: 0;
+  padding-left: 1.15rem;
+}
+
+.honors-card li {
+  margin: 0;
+  padding: 0.18rem 0;
+  line-height: 1.4;
+}
+
+.honors-card-gold li::marker {
+  color: var(--gold);
+}
+
+.honors-card-silver li::marker {
+  color: #8e98a6;
+}
+
+.honors-card-bronze li::marker {
+  color: #b8733a;
+}
+
+.honors-card-usa li::marker {
+  color: var(--red);
 }
 
 .prose .table-wrap {
