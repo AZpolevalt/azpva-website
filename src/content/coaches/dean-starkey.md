@@ -53,6 +53,89 @@ videos:
 
 Dean leads Arizona Pole Vault Academy as Head Coach/Director. A University of Illinois alum and World Championships bronze medalist with a personal best of 19'5" (5.92m), he built AZPVA around technique-first coaching, a deep pole inventory, and a facility designed for the event. Athletes and parents know him for clear progressions, honest feedback, and a culture that treats vaulting as a craft.
 
+## Career honors
+
+<div class="honors">
+<article class="honors-card honors-card-gold">
+<h3 class="honors-title">
+<svg class="honors-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<path fill="currentColor" opacity="0.45" d="M7.6 1.7h2.55l1.2 8.7H8.5L7.6 1.7z"/>
+<path fill="currentColor" opacity="0.75" d="M13.85 1.7h2.55L15.5 10.4h-2.85L13.85 1.7z"/>
+<circle cx="12" cy="15.45" r="6.2" fill="currentColor"/>
+<circle cx="12" cy="15.45" r="4.2" fill="none" stroke="#fff" stroke-opacity="0.72" stroke-width="1"/>
+</svg>
+<span>Gold medals</span>
+</h3>
+<ul>
+<li>1988 NCAA Indoor Championships</li>
+<li>1989 NCAA Indoor Championships</li>
+<li>1992 USA Indoor Championships</li>
+<li>1992 Linz, Austria</li>
+<li>1991 &amp; 1994 Brazil Grand Prix</li>
+<li>1994 Lausanne Grand Prix</li>
+<li>1995 Monte Carlo Grand Prix</li>
+</ul>
+</article>
+
+<article class="honors-card honors-card-silver">
+<h3 class="honors-title">
+<svg class="honors-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<path fill="currentColor" opacity="0.45" d="M7.6 1.7h2.55l1.2 8.7H8.5L7.6 1.7z"/>
+<path fill="currentColor" opacity="0.75" d="M13.85 1.7h2.55L15.5 10.4h-2.85L13.85 1.7z"/>
+<circle cx="12" cy="15.45" r="6.2" fill="currentColor"/>
+<circle cx="12" cy="15.45" r="4.2" fill="none" stroke="#fff" stroke-opacity="0.72" stroke-width="1"/>
+</svg>
+<span>Silver medals</span>
+</h3>
+<ul>
+<li>1989 World University Games</li>
+<li>1993–1995 USA Outdoor Championships</li>
+<li>1994 Lille, France Grand Prix II</li>
+<li>1994 Stockholm Grand Prix</li>
+<li>1997 USA Outdoor Championships</li>
+<li>1997 Grand Prix Championships, Paris</li>
+<li>1998 Donetsk, Ukraine</li>
+</ul>
+</article>
+
+<article class="honors-card honors-card-bronze">
+<h3 class="honors-title">
+<svg class="honors-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<path fill="currentColor" opacity="0.45" d="M7.6 1.7h2.55l1.2 8.7H8.5L7.6 1.7z"/>
+<path fill="currentColor" opacity="0.75" d="M13.85 1.7h2.55L15.5 10.4h-2.85L13.85 1.7z"/>
+<circle cx="12" cy="15.45" r="6.2" fill="currentColor"/>
+<circle cx="12" cy="15.45" r="4.2" fill="none" stroke="#fff" stroke-opacity="0.72" stroke-width="1"/>
+</svg>
+<span>Bronze medals</span>
+</h3>
+<ul>
+<li>1994 Nice, France Grand Prix</li>
+<li>1994 St. Denis Grand Prix II, France</li>
+<li>1997 World Championships, Athens, Greece</li>
+<li>1998 USA Outdoor National Championships</li>
+</ul>
+</article>
+
+<article class="honors-card honors-card-usa">
+<h3 class="honors-title">
+<svg class="honors-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<path fill="currentColor" d="M12 2.35 19.55 5.55v6.65c0 4.55-3.15 7.7-7.55 9.1-4.4-1.4-7.55-4.55-7.55-9.1V5.55L12 2.35z"/>
+<path fill="#fff" fill-opacity="0.22" d="M12 4.85 16.9 6.85v4.85c0 3.05-2.05 5.2-4.9 6.2-2.85-1-4.9-3.15-4.9-6.2V6.85L12 4.85z"/>
+</svg>
+<span>USA teams</span>
+</h3>
+<ul>
+<li>1989 World University Games</li>
+<li>1989 USA vs. Russia</li>
+<li>1993 World Championships team</li>
+<li>1994 Goodwill Games</li>
+<li>1995 World Championships team</li>
+<li>1997 World Championships team</li>
+<li>1998 Goodwill Games</li>
+</ul>
+</article>
+</div>
+
 ## International marks
 
 <div class="table-wrap">
