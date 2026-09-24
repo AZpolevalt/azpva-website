@@ -7,6 +7,7 @@ credentials: UAlbany · ASU · NCAA West Prelims · Pac-12 · Conference titles 
 featured: false
 image: /images/coaches/nathan-hiett.jpg
 gallery:
+  - /images/coaches/gallery/nathan/00-night-vault.jpg
   - /images/coaches/gallery/nathan/01-clear.jpg
   - /images/coaches/gallery/nathan/02-apex.jpg
   - /images/coaches/gallery/nathan/03-ualbany-run.jpg
