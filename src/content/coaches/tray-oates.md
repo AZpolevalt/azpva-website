@@ -36,4 +36,8 @@ videos:
     title: Tray Oates Underwater Pole Vault
     url: https://www.youtube.com/watch?v=0wLYAAMhTIg
 ---
-Tray is Coach/Facilities Director at AZPVA. A Samford University alum who placed 4th at the USA Indoor Championships with a personal best of 19'1" (5.82m), he helps athletes dial in approach rhythm, plant timing, and the athletic pieces that unlock higher bars — while keeping the Queen Creek facility running smoothly for busy training nights.
+Tray Oates is a coach and facilities director at Arizona Pole Vault Academy in Queen Creek, Arizona. He attended Samford University, placed 4th at the USA Indoor Championships, and has a personal best of 19'1" (5.82 m).
+
+Oates's days are spent helping athletes with approach rhythm, plant timing, and the athletic pieces that unlock higher bars. He also keeps the Queen Creek facility running smoothly on busy training nights. He is married to fellow AZPVA coach [Kortney Oates](/team/kortney-oates). He has attempted to qualify for the Olympics. He has also been filmed pole vaulting underwater.
+
+Oates's skills include pole vault coaching skills, facilities director skills, and making sure the mats are where they need to be.

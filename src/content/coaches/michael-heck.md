@@ -1,7 +1,7 @@
 ---
 name: Michael Heck, MA, LPC
 role: Sports Psychology Coach
-order: 6
+order: 7
 pbs: Competition mindset & performance routines
 credentials: Azusa Pacific University · MA, LPC
 featured: false

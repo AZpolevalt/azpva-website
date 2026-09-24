@@ -1,9 +1,9 @@
 ---
 name: Nathan Hiett
 role: Coach/Marketing Director
-order: 4
-pbs: "PB 17'7 1/4\" (5.37m)"
-credentials: Arizona State · Pac-12 Runner-up
+order: 5
+pbs: "PB 5.37m (17'7¼\")"
+credentials: UAlbany · ASU · NCAA West Prelims · Pac-12 · Conference titles at Albany
 featured: false
 image: /images/coaches/nathan-hiett.jpg
 gallery:
@@ -32,4 +32,10 @@ videos:
     title: UAlbany Mens Pole Vault Nathan Hiett 4.95m
     url: https://www.youtube.com/watch?v=KmBxJdwPKUM
 ---
-Nathan is Coach/Marketing Director at AZPVA. An Arizona State alum and Pac-12 runner-up with a personal best of 17'7 1/4" (5.37m), he coaches across group sessions with an emphasis on consistent technical cues, safe progressions, and competitive preparation for the high school calendar.
+Nathan Hiett has been involved in pole vault for more than half of his life as both an athlete and coach. He began vaulting in high school in Arizona before competing collegiately at the University at Albany and later Arizona State University. During his college career, he won conference titles at Albany, competed at the Pac-12 Championships, and qualified for the NCAA West Preliminary Round.
+
+Nathan has continued competing after college and has improved his personal best to 5.37m (17'7¼"). His experience as an athlete has given him exposure to a wide range of training systems, technical approaches, and coaching styles, which he uses to meet athletes where they are rather than forcing every vaulter into the same model.
+
+As a coach, Nathan emphasizes the fundamentals that make long-term development possible: efficient sprint mechanics, a consistent approach, a confident takeoff, effective pole movement, and a strong understanding of how the phases of the vault connect. He also places a major emphasis on strength and athletic development, confidence, and helping athletes become more independent problem-solvers in their own training.
+
+Nathan's goal is to create a positive, competitive environment where athletes can enjoy the event, understand why they are doing what they are doing, and steadily develop toward their individual potential.
