@@ -1216,3 +1216,135 @@ p {
 .footer-social span {
   color: rgba(255, 255, 255, 0.35);
 }
+
+.notice-info {
+  background: #e8eef8;
+  border-color: #c5d4ea;
+  color: var(--navy);
+}
+
+.guide h2,
+.guide h3,
+.guide h4 {
+  color: var(--navy);
+  scroll-margin-top: 5.5rem;
+}
+
+.guide h2 {
+  font-size: clamp(1.45rem, 2.4vw, 1.85rem);
+  margin-top: 2.5rem;
+}
+
+.guide h3 {
+  font-size: 1.15rem;
+  margin: 1.65rem 0 0.5rem;
+}
+
+.guide h4 {
+  font-size: 1.02rem;
+  margin: 1.15rem 0 0.35rem;
+}
+
+.guide a:not(.btn) {
+  color: #1d4a86;
+  text-decoration: underline;
+  text-underline-offset: 0.16em;
+  text-decoration-thickness: 1px;
+  overflow-wrap: anywhere;
+}
+
+.guide a:not(.btn):hover {
+  color: var(--red);
+}
+
+.guide ul,
+.guide ol {
+  margin: 0.35rem 0 1.1rem;
+  padding-left: 1.2rem;
+}
+
+.guide li {
+  margin: 0.32rem 0;
+}
+
+.guide-toc {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1rem 1.15rem 0.35rem;
+  margin: 0 0 1.5rem;
+}
+
+.guide-toc p {
+  margin-bottom: 0.45rem;
+  font-weight: 800;
+  color: var(--navy);
+}
+
+@media (min-width: 700px) {
+  .guide-toc ol {
+    columns: 2;
+    column-gap: 1.75rem;
+  }
+
+  .guide-toc li {
+    break-inside: avoid;
+  }
+}
+
+.guide blockquote {
+  margin: 0.85rem 0 1.2rem;
+  padding: 0.9rem 1rem;
+  background: white;
+  border-left: 4px solid var(--gold);
+  border-radius: 0 12px 12px 0;
+  color: var(--navy);
+}
+
+.sample-email {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.05rem 1.15rem;
+  margin: 0.5rem 0 1.25rem;
+  white-space: pre-wrap;
+  font-family: var(--font);
+  font-size: 0.98rem;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.program {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.85rem 1rem 0.2rem;
+  margin: 0.75rem 0;
+}
+
+.program h4 {
+  margin-top: 0;
+}
+
+.program ul {
+  margin-bottom: 0.65rem;
+}
+
+.guide .school-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.55rem;
+}
+
+.school-list li {
+  margin: 0;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.28rem 0.7rem;
+  font-weight: 600;
+  font-size: 0.92rem;
+}
