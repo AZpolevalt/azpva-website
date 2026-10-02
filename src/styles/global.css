@@ -296,6 +296,17 @@ p {
   color: var(--navy);
 }
 
+.btn-gold:hover {
+  background: #c49212;
+}
+
+.event-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
 .hero {
   position: relative;
   overflow: hidden;

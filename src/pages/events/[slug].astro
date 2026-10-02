@@ -12,7 +12,9 @@ export async function getStaticPaths() {
 
 const { event } = Astro.props;
 const { Content } = await render(event);
-const { registerUrl, status } = event.data;
+const { registerUrl, registerLabel, officialRegisterUrl, officialRegisterLabel, status } = event.data;
+const pushPressLabel = registerLabel ?? 'Sign up (PushPress)';
+const officialLabel = officialRegisterLabel ?? 'Official registration';
 ---
 
 <BaseLayout title={event.data.title} description={event.data.summary}>
@@ -27,15 +29,42 @@ const { registerUrl, status } = event.data;
       {event.data.price && (
         <p style="margin-top: 0.75rem; color: rgba(255,255,255,0.9)">{event.data.price}</p>
       )}
+      {officialRegisterUrl && (
+        <>
+          <p style="margin-top: 1rem; color: rgba(255,255,255,0.9); max-width: 62ch">
+            Official event registration and the AZPVA signup on this page are separate.
+          </p>
+          <p class="event-cta-actions">
+            <a class="btn btn-primary" href={officialRegisterUrl} target="_blank" rel="noopener noreferrer">
+              {officialLabel}
+            </a>
+            {registerUrl && (
+              <a class="btn btn-gold" href={registerUrl} target="_blank" rel="noopener noreferrer">
+                {pushPressLabel}
+              </a>
+            )}
+          </p>
+        </>
+      )}
     </div>
   </section>
   <section class="section">
     <div class="container prose">
       <Content />
-      <p style="margin-top: 2rem; display:flex; flex-wrap:wrap; gap:0.75rem">
+      <p class="event-cta-actions" style="margin-top: 2rem">
+        {officialRegisterUrl && (
+          <a class="btn btn-primary" href={officialRegisterUrl} target="_blank" rel="noopener noreferrer">
+            {officialLabel}
+          </a>
+        )}
         {registerUrl ? (
-          <a class="btn btn-primary" href={registerUrl} target="_blank" rel="noopener noreferrer">
-            Sign up (PushPress)
+          <a
+            class:list={['btn', officialRegisterUrl ? 'btn-gold' : 'btn-primary']}
+            href={registerUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {pushPressLabel}
           </a>
         ) : status === 'coming-soon' || status === 'closed' ? null : (
           <a class="btn btn-primary" href="/contact">Ask about registration</a>

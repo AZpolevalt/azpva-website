@@ -7,11 +7,21 @@ location: Reno, Nevada
 price: AZPVA Travel Fee $299 (+ summit registration & travel)
 status: open
 registerUrl: https://azpva.pushpress.com/landing/events/cal-99c7f8e912614e818665973cf784/login
+registerLabel: AZPVA coaching & pole transport ($299)
+officialRegisterUrl: https://polevaultsummit.org
+officialRegisterLabel: Register for the Summit
 summary: Flagship AZPVA travel trip to the Reno Pole Vault Summit — ~20 pits under one roof, clinics and elite competition, with coaching and pole transport included in the $299 travel fee.
 featured: true
 ---
 
 **January 15–16, 2027 · Reno, Nevada**
+
+## Two registrations
+
+Attending with AZPVA takes two separate signups. The buttons at the top of this page go to each one.
+
+1. **Register for the Summit** on the official Summit site, [polevaultsummit.org](https://polevaultsummit.org). That is meet registration for athletes, coaches, parents, and spectators. Registration opens in September. Last year’s rates are in the table below.
+2. **Sign up for AZPVA coaching and pole transport ($299)** on this page through PushPress. The travel fee covers coaching, pole transport, and usage. It does not include Summit registration, flights, hotel, or meals.
 
 ## The pinnacle of pole vault events
 
@@ -33,8 +43,8 @@ Please thoroughly go through the competition website. It should be able to answe
 
 **Travel note:** You do not need to rent a car. The Summit typically has shuttle systems available for transportation between the airport, hotel, and competition venue.
 
-- **Official site:** [polevaultsummit.org](http://polevaultsummit.org)
-- **Register for the Summit:** [Register Here](http://polevaultsummit.org)
+- **Official site:** [polevaultsummit.org](https://polevaultsummit.org)
+- **Register for the Summit:** [Register for the Summit](https://polevaultsummit.org) — athletes, coaches, parents, and spectators. This is separate from the AZPVA $299 coaching and pole-transport signup.
 - **Meet video (must watch):** [Click Here](https://youtu.be/PJycQxpr7zw)
 
 ## AZPVA itinerary
@@ -76,7 +86,7 @@ Based on last year’s registration pricing:
 | Parent | $50.00 | $65.00 | $65.00 |
 | Spectator | $45.00 | $45.00 | $45.00 |
 
-Registration opens in September on the [official Summit site](http://polevaultsummit.org).
+Registration opens in September on the [official Summit site](https://polevaultsummit.org).
 
 ## Travel info / estimated costs
 
@@ -90,7 +100,9 @@ Registration opens in September on the [official Summit site](http://polevaultsu
 
 The AZPVA travel fee covers **coaching, pole transport, and usage**. Poles will be consolidated into as few bags as possible and shipped through Southwest Cargo to make travel easier for athletes and families. No one will have to travel with poles.
 
-**Registration is open:** [Sign up here (PushPress)](https://azpva.pushpress.com/landing/events/cal-99c7f8e912614e818665973cf784/login)
+This $299 signup does not register you for the Summit. Complete meet registration at [polevaultsummit.org](https://polevaultsummit.org), then sign up for the AZPVA travel fee here.
+
+**AZPVA signup is open:** [Sign up for coaching and pole transport (PushPress)](https://azpva.pushpress.com/landing/events/cal-99c7f8e912614e818665973cf784/login)
 
 ## Important reminders
 
