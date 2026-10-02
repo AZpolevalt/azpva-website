@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const newsletters = await getCollection('newsletters');
+  return newsletters.map((issue) => ({
+    params: { slug: issue.id },
+    props: { issue },
+  }));
+}
+
+const { issue } = Astro.props;
+const { Content } = await render(issue);
+
+function formatIssueDate(date: Date) {
+  return date.toLocaleDateString('en-US', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+    timeZone: 'UTC',
+  });
+}
+---
+
+<BaseLayout title={issue.data.title} description={issue.data.summary}>
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">Newsletter</p>
+      <h1>{issue.data.title}</h1>
+      <p style="color: rgba(255,255,255,0.85)">
+        <time datetime={issue.data.date.toISOString().slice(0, 10)}>{formatIssueDate(issue.data.date)}</time>
+      </p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container prose">
+      <Content />
+      <p style="margin-top: 2rem">
+        <a class="btn btn-secondary" href="/news">All newsletters</a>
+      </p>
+    </div>
+  </section>
+</BaseLayout>

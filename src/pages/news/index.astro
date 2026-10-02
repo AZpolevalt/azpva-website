@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const newsletters = (await getCollection('newsletters'))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+
+function formatIssueDate(date: Date) {
+  return date.toLocaleDateString('en-US', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+    timeZone: 'UTC',
+  });
+}
+---
+
+<BaseLayout
+  title="Newsletter"
+  description="Recent monthly newsletters from Arizona Pole Vault Academy — camps, fall training, competitions, and club updates."
+>
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">Club updates</p>
+      <h1>Newsletter</h1>
+      <p style="color: rgba(255,255,255,0.85); max-width: 58ch">
+        Monthly notes sent to the AZPVA list — camps, training blocks, competitions, and club news. The three most recent issues are below.
+      </p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="card-grid cols-3">
+        {newsletters.map((issue) => (
+          <article class="card">
+            <p class="muted" style="margin-top: 0">{formatIssueDate(issue.data.date)}</p>
+            <h2 style="font-size: 1.35rem; margin-top: 0.35rem">{issue.data.title}</h2>
+            <p>{issue.data.summary}</p>
+            <a class="btn btn-secondary" href={`/news/${issue.id}`}>Read issue</a>
+          </article>
+        ))}
+      </div>
+      <p class="muted" style="margin-top: 1.5rem; max-width: 62ch">
+        Want these in your inbox?
+        <a href="/#email-updates">Sign up for email updates</a>
+        or <a href="mailto:arizonapolevaultacademy@gmail.com">email the academy</a>.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
