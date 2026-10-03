@@ -2,9 +2,9 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
-const newsletters = (await getCollection('newsletters'))
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-  .slice(0, 3);
+const newsletters = (await getCollection('newsletters')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
 
 function formatIssueDate(date: Date) {
   return date.toLocaleDateString('en-US', {
@@ -25,7 +25,7 @@ function formatIssueDate(date: Date) {
       <p class="eyebrow">Club updates</p>
       <h1>Newsletter</h1>
       <p style="color: rgba(255,255,255,0.85); max-width: 58ch">
-        Monthly notes sent to the AZPVA list — camps, training blocks, competitions, and club news. The three most recent issues are below.
+        Monthly notes sent to the AZPVA list — camps, training blocks, competitions, and club news. Newest issues are listed first.
       </p>
     </div>
   </section>
