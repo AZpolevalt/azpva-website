@@ -32,12 +32,11 @@ const { albums, photosByAlbum } = await loadPhotoArchive();
                 <div class="album-card-media">
                   {cover ? (
                     <img
-                      src={cover.data.src}
+                      src={cover.data.thumb ?? cover.data.src}
                       alt=""
-                      width={cover.data.width}
-                      height={cover.data.height}
+                      width={cover.data.thumbWidth ?? cover.data.width}
+                      height={cover.data.thumbHeight ?? cover.data.height}
                       loading="lazy"
-                      style={cover.data.objectPosition ? `object-position: ${cover.data.objectPosition}` : undefined}
                     />
                   ) : (
                     <p class="album-card-empty">No photos yet</p>

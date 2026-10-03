@@ -107,13 +107,12 @@ const photos = defineCollection({
     height: z.number().int().positive(),
     date: z.coerce.date().optional(),
     /**
-     * Focal point for the 4:3 album-card thumbnail only.
-     * The album page still shows the full photo.
+     * Optional 4:3 card image. The album page keeps using src.
+     * Use this when the full photo is too tall for the index card.
      */
-    objectPosition: z
-      .string()
-      .regex(/^(center|left|right|\d{1,3}%) (center|top|bottom|\d{1,3}%)$/)
-      .optional(),
+    thumb: z.string().startsWith('/photos/').optional(),
+    thumbWidth: z.number().int().positive().optional(),
+    thumbHeight: z.number().int().positive().optional(),
   }),
 });
 

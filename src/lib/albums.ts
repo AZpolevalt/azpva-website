@@ -64,6 +64,15 @@ export async function loadPhotoArchive() {
     if (!existsSync(filePath)) {
       throw new Error(`Photo "${photo.id}" points at missing file ${photo.data.src}`);
     }
+    if (photo.data.thumb) {
+      if (!photo.data.thumbWidth || !photo.data.thumbHeight) {
+        throw new Error(`Photo "${photo.id}" has a thumb without thumbWidth and thumbHeight.`);
+      }
+      const thumbPath = join(process.cwd(), 'public', photo.data.thumb.replace(/^\//, ''));
+      if (!existsSync(thumbPath)) {
+        throw new Error(`Photo "${photo.id}" points at missing thumbnail ${photo.data.thumb}`);
+      }
+    }
   }
 
   const photosByAlbum = new Map<string, Photo[]>();
