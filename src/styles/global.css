@@ -1759,8 +1759,12 @@ p {
 .album-card-media img {
   width: 100%;
   height: 100%;
+  align-self: stretch;
+  justify-self: stretch;
   object-fit: cover;
-  object-position: center center;
+  /* Portrait camp photos are much taller than this 4:3 frame. Center cover
+     crops through the faces and leaves the white mat filling the card. */
+  object-position: center top;
 }
 
 .album-card-empty {
