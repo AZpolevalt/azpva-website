@@ -106,6 +106,14 @@ const photos = defineCollection({
     width: z.number().int().positive(),
     height: z.number().int().positive(),
     date: z.coerce.date().optional(),
+    /**
+     * Focal point for the 4:3 album-card thumbnail only.
+     * The album page still shows the full photo.
+     */
+    objectPosition: z
+      .string()
+      .regex(/^(center|left|right|\d{1,3}%) (center|top|bottom|\d{1,3}%)$/)
+      .optional(),
   }),
 });
 

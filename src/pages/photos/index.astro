@@ -37,6 +37,7 @@ const { albums, photosByAlbum } = await loadPhotoArchive();
                       width={cover.data.width}
                       height={cover.data.height}
                       loading="lazy"
+                      style={cover.data.objectPosition ? `object-position: ${cover.data.objectPosition}` : undefined}
                     />
                   ) : (
                     <p class="album-card-empty">No photos yet</p>
