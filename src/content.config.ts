@@ -63,4 +63,14 @@ const events = defineCollection({
   }),
 });
 
-export const collections = { coaches, camps, events };
+const newsletters = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/newsletters' }),
+  schema: z.object({
+    title: z.string(),
+    /** Calendar date the issue was sent (YYYY-MM-DD). */
+    date: z.coerce.date(),
+    summary: z.string(),
+  }),
+});
+
+export const collections = { coaches, camps, events, newsletters };
