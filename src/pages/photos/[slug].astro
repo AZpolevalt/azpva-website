@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { albumKindLabel, formatAlbumDate, loadPhotoArchive, photoCountLabel } from '../../lib/albums';
+import { albumDateLabel, albumKindLabel, loadPhotoArchive, photoCountLabel } from '../../lib/albums';
 
 export async function getStaticPaths() {
   const { albums, photosByAlbum } = await loadPhotoArchive();
@@ -14,7 +14,7 @@ export async function getStaticPaths() {
 }
 
 const { album, photos } = Astro.props;
-const dateLabel = album.data.date ? formatAlbumDate(album.data.date) : null;
+const dateLabel = album.data.date || album.data.dateLabel ? albumDateLabel(album) : null;
 ---
 
 <BaseLayout title={album.data.title} description={album.data.summary}>

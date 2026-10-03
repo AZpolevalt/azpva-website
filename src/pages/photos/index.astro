@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { albumKindLabel, formatAlbumDate, loadPhotoArchive, photoCountLabel } from '../../lib/albums';
+import { albumDateLabel, albumKindLabel, loadPhotoArchive, photoCountLabel } from '../../lib/albums';
 
 const { albums, photosByAlbum } = await loadPhotoArchive();
 ---
@@ -25,7 +25,7 @@ const { albums, photosByAlbum } = await loadPhotoArchive();
         {albums.map((album) => {
           const photos = photosByAlbum.get(album.id) ?? [];
           const cover = photos[0];
-          const dateLabel = album.data.date ? formatAlbumDate(album.data.date) : 'Ongoing';
+          const dateLabel = albumDateLabel(album);
           return (
             <article class="card album-card">
               <a class="album-card-link" href={`/photos/${album.id}`}>

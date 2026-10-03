@@ -78,10 +78,12 @@ const albums = defineCollection({
   schema: z.object({
     title: z.string(),
     /**
-     * Event month used to list albums newest first.
+     * Sort date used to list albums newest first.
      * Omit for an ongoing album such as More photos; that album sorts after dated ones until a photo carries a date.
      */
     date: z.coerce.date().optional(),
+    /** Visible date. Use this when the sort date’s month is only a placeholder, such as a spring camp. */
+    dateLabel: z.string().optional(),
     summary: z.string(),
     kind: z.enum(['camp', 'event', 'archive']).default('camp'),
     /**

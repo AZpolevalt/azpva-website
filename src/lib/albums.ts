@@ -24,6 +24,12 @@ export function formatAlbumDate(date: Date) {
   });
 }
 
+export function albumDateLabel(album: Album) {
+  if (album.data.dateLabel) return album.data.dateLabel;
+  if (album.data.date) return formatAlbumDate(album.data.date);
+  return 'Ongoing';
+}
+
 export function photoCountLabel(count: number) {
   return count === 1 ? '1 photo' : `${count} photos`;
 }
