@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { albumDateLabel, albumKindLabel, loadPhotoArchive, photoCountLabel } from '../../lib/albums';
+
+const { albums, photosByAlbum } = await loadPhotoArchive();
+---
+
+<BaseLayout
+  title="Photos"
+  description="Photo archive for Arizona Pole Vault Academy — camp albums, named events, and other photos. Newest albums first."
+>
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">Archive</p>
+      <h1>Photos</h1>
+      <p style="color: rgba(255,255,255,0.85); max-width: 58ch">
+        Camp weekends, named events, and other photos from the academy. Newest albums are listed first.
+        Shots that are not a camp or a named event live in More photos.
+      </p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="card-grid cols-3">
+        {albums.map((album) => {
+          const photos = photosByAlbum.get(album.id) ?? [];
+          const cover = photos[0];
+          const dateLabel = albumDateLabel(album);
+          return (
+            <article class="card album-card">
+              <a class="album-card-link" href={`/photos/${album.id}`}>
+                <div class="album-card-media">
+                  {cover ? (
+                    <img
+                      src={cover.data.src}
+                      alt=""
+                      width={cover.data.width}
+                      height={cover.data.height}
+                      loading="lazy"
+                    />
+                  ) : (
+                    <p class="album-card-empty">No photos yet</p>
+                  )}
+                </div>
+                <div class="album-card-body">
+                  <p class="eyebrow" style="color: var(--red); margin-bottom: 0.35rem">{albumKindLabel(album.data.kind)}</p>
+                  <h2>{album.data.title}</h2>
+                  <p class="album-meta">{dateLabel} · {photoCountLabel(photos.length)}</p>
+                  <p>{album.data.summary}</p>
+                </div>
+              </a>
+            </article>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

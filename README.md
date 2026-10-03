@@ -6,7 +6,7 @@ Marketing site for **Arizona Pole Vault Academy** (Queen Creek, AZ), built with 
 
 - Astro 7 (static output)
 - TypeScript (strict)
-- Content collections: `coaches`, `camps`, `events`
+- Content collections: `coaches`, `camps`, `events`, `newsletters`, `albums`, `photos`
 - Mobile-first athletic UI (no UI framework dependency)
 - Pagefind static site search (build-time index)
 
@@ -125,6 +125,11 @@ Edit Markdown in:
 - `src/content/coaches/`
 - `src/content/camps/`
 - `src/content/events/`
+- `src/content/newsletters/`
+- `src/content/albums/` — one file per album (name, date, summary)
+- `src/content/photos/` — one file per photo (caption, album id, image path)
+
+Photo files live in `public/photos/<album-id>/`. To add a photo, drop the JPEG there and add a short Markdown file in `src/content/photos/` with the album id and caption. Use the `more-photos` album for shots that are not a camp or a named event. A camp page links to an album when that album’s id matches the camp (or its `camp` field does) and the album has at least one photo.
 
 Schemas live in `src/content.config.ts`.
 
