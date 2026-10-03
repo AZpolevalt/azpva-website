@@ -106,6 +106,13 @@ const photos = defineCollection({
     width: z.number().int().positive(),
     height: z.number().int().positive(),
     date: z.coerce.date().optional(),
+    /**
+     * Optional 4:3 card image. The album page keeps using src.
+     * Use this when the full photo is too tall for the index card.
+     */
+    thumb: z.string().startsWith('/photos/').optional(),
+    thumbWidth: z.number().int().positive().optional(),
+    thumbHeight: z.number().int().positive().optional(),
   }),
 });
 
