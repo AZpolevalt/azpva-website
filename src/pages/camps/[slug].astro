@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { albumForCamp, loadPhotoArchive } from '../../lib/albums';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -14,6 +15,10 @@ const { camp } = Astro.props;
 const { Content } = await render(camp);
 const { registerUrl, registerCommuterUrl, registerOvernighterUrl } = camp.data;
 const hasDualRegister = Boolean(registerCommuterUrl || registerOvernighterUrl);
+const { albums, photosByAlbum } = await loadPhotoArchive();
+const campAlbum = albumForCamp(camp.id, albums);
+const campAlbumPhotos = campAlbum ? photosByAlbum.get(campAlbum.id) ?? [] : [];
+const campAlbumHref = campAlbum && campAlbumPhotos.length > 0 ? `/photos/${campAlbum.id}` : null;
 ---
 
 <BaseLayout title={camp.data.title} description={camp.data.summary}>
@@ -51,6 +56,9 @@ const hasDualRegister = Boolean(registerCommuterUrl || registerOvernighterUrl);
           <a class="btn btn-primary" href="tel:+14807666017">Call to register</a>
         )}
         <a class="btn btn-secondary" href="tel:+14807666017">Call (480) 766-6017</a>
+        {campAlbumHref && (
+          <a class="btn btn-secondary" href={campAlbumHref}>Camp photos</a>
+        )}
         <a class="btn btn-secondary" href="/camps">All camps</a>
       </p>
     </div>

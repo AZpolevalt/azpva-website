@@ -1724,3 +1724,109 @@ p {
 .profile .priority p:last-child {
   margin-bottom: 0;
 }
+
+.album-card {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.album-card-link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  color: inherit;
+}
+
+.album-card-link:hover h2 {
+  color: var(--red);
+}
+
+.album-card-link:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 3px;
+}
+
+.album-card-media {
+  aspect-ratio: 4 / 3;
+  background: #e8eef5;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.album-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.album-card-empty {
+  margin: 0;
+  padding: 1.25rem;
+  text-align: center;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.album-card-body {
+  padding: 1.1rem 1.25rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.album-card-body h2 {
+  font-size: 1.3rem;
+  margin: 0 0 0.35rem;
+}
+
+.album-meta {
+  color: var(--muted);
+  font-size: 0.92rem;
+  margin: 0 0 0.65rem;
+}
+
+.album-card-body p:last-child {
+  margin-bottom: 0;
+}
+
+.album-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+@media (min-width: 800px) {
+  .album-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.album-photo {
+  margin: 0;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.album-photo img {
+  width: 100%;
+  height: auto;
+  background: var(--navy);
+}
+
+.album-photo figcaption {
+  padding: 0.85rem 1rem 1rem;
+  font-weight: 600;
+}
+
+.album-empty {
+  background: white;
+  border: 1px dashed rgba(11, 31, 58, 0.25);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+}

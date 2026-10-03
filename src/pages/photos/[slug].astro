@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { albumKindLabel, formatAlbumDate, loadPhotoArchive, photoCountLabel } from '../../lib/albums';
+
+export async function getStaticPaths() {
+  const { albums, photosByAlbum } = await loadPhotoArchive();
+  return albums.map((album) => ({
+    params: { slug: album.id },
+    props: {
+      album,
+      photos: photosByAlbum.get(album.id) ?? [],
+    },
+  }));
+}
+
+const { album, photos } = Astro.props;
+const dateLabel = album.data.date ? formatAlbumDate(album.data.date) : null;
+---
+
+<BaseLayout title={album.data.title} description={album.data.summary}>
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">{albumKindLabel(album.data.kind)}</p>
+      <h1>{album.data.title}</h1>
+      <p style="color: rgba(255,255,255,0.85)">
+        {dateLabel ? `${dateLabel} · ` : ''}{photoCountLabel(photos.length)}
+      </p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <p style="max-width: 62ch">{album.data.summary}</p>
+      {photos.length > 0 ? (
+        <div class="album-grid">
+          {photos.map((photo) => (
+            <figure class="album-photo">
+              <img
+                src={photo.data.src}
+                alt={photo.data.alt}
+                width={photo.data.width}
+                height={photo.data.height}
+                loading="lazy"
+              />
+              <figcaption>{photo.data.caption}</figcaption>
+            </figure>
+          ))}
+        </div>
+      ) : (
+        <div class="album-empty">
+          <p style="margin: 0">No photos in this album yet.</p>
+        </div>
+      )}
+      <p style="margin-top: 1.5rem">
+        <a class="btn btn-secondary" href="/photos">All photos</a>
+      </p>
+    </div>
+  </section>
+</BaseLayout>
