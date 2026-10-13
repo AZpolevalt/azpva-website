@@ -1,0 +1,70 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LibraryFilter from '../../components/LibraryFilter.astro';
+import library from '../../data/youtube-library.json';
+export function getStaticPaths() {
+  return library.playlists.map((playlist) => ({ params: { slug: playlist.slug }, props: { playlist } }));
+}
+const { playlist } = Astro.props;
+const shortTitle = playlist.title.replace(/^exercise library\s*-\s*/i, '');
+---
+<BaseLayout title={`${shortTitle} — Exercise Library`} description={playlist.description}>
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow"><a href="/library" style="color: inherit">Exercise Library</a></p>
+      <h1>{shortTitle}</h1>
+      <p style="color: rgba(255,255,255,0.85)">{playlist.videoCount} videos · {playlist.description}</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <LibraryFilter placeholder="Filter exercises" target="[data-video-thumb]" />
+      <div class="library-video-grid">
+        {playlist.videos.map((v) => (
+          <button type="button" class="library-video-thumb" data-video-thumb data-video-id={v.id} data-video-title={v.title} data-search={v.title.toLowerCase()}>
+            <span class="library-video-img"><img src={v.thumbnail} alt="" loading="lazy" width="480" height="360" /><span class="library-play" aria-hidden="true">▶</span></span>
+            <span class="library-video-title">{v.title}</span>
+          </button>
+        ))}
+      </div>
+      <p style="margin-top: 2rem"><a class="btn btn-secondary" href="/library">All categories</a>
+        <a class="btn btn-secondary" href={`https://www.youtube.com/playlist?list=${playlist.id}`} rel="noopener" target="_blank" style="margin-left: 0.5rem">Open on YouTube</a></p>
+    </div>
+  </section>
+  <div class="photo-lightbox" data-video-lightbox hidden>
+    <div class="photo-lightbox-backdrop" data-lightbox-close tabindex="-1"></div>
+    <div class="photo-lightbox-dialog video-lightbox-dialog" role="dialog" aria-modal="true" aria-label="Exercise video">
+      <button type="button" class="photo-lightbox-close" data-lightbox-close aria-label="Close video">×</button>
+      <div class="video-embed" data-video-slot></div>
+      <p class="photo-lightbox-counter" data-video-caption></p>
+    </div>
+  </div>
+  <script>
+    const box = document.querySelector<HTMLElement>('[data-video-lightbox]');
+    const slot = box?.querySelector<HTMLElement>('[data-video-slot]');
+    const caption = box?.querySelector<HTMLElement>('[data-video-caption]');
+    let opener: HTMLElement | null = null;
+    function hide() {
+      if (!box || !slot) return;
+      box.hidden = true; slot.innerHTML = ''; document.body.style.overflow = ''; opener?.focus();
+    }
+    document.querySelectorAll<HTMLElement>('[data-video-thumb]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        if (!box || !slot || !caption) return;
+        opener = btn;
+        const iframe = document.createElement('iframe');
+        iframe.src = `https://www.youtube-nocookie.com/embed/${btn.dataset.videoId}?autoplay=1&rel=0`;
+        iframe.title = btn.dataset.videoTitle || 'Exercise video';
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+        iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+        iframe.allowFullscreen = true;
+        slot.replaceChildren(iframe);
+        caption.textContent = btn.dataset.videoTitle || '';
+        box.hidden = false; document.body.style.overflow = 'hidden';
+        box.querySelector<HTMLElement>('.photo-lightbox-close')?.focus();
+      });
+    });
+    box?.querySelectorAll('[data-lightbox-close]').forEach((el) => el.addEventListener('click', hide));
+    document.addEventListener('keydown', (e) => { if (box && !box.hidden && e.key === 'Escape') hide(); });
+  </script>
+</BaseLayout>

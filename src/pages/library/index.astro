@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LibraryFilter from '../../components/LibraryFilter.astro';
+import library from '../../data/youtube-library.json';
+const shortTitle = (t: string) => t.replace(/^exercise library\s*-\s*/i, '');
+const total = library.playlists.reduce((n, p) => n + p.videoCount, 0);
+---
+<BaseLayout title="Exercise Library" description="AZPVA exercise and drill video library: pole vault drills, warmups, strength, plyometrics, high bar and weight room.">
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">Camps & Training</p>
+      <h1>Exercise Library</h1>
+      <p style="color: rgba(255,255,255,0.85)">{library.playlists.length} categories · {total} drill and exercise videos from AZPVA coaching.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <LibraryFilter placeholder="Filter categories or exercises (e.g. bounds, squat)" target="[data-library-card]" />
+      <div class="library-grid">
+        {library.playlists.map((p) => (
+          <a class="library-card card" href={`/library/${p.slug}`} data-library-card
+             data-search={[p.title, p.description, ...p.videos.map((v) => v.title)].join(' ').toLowerCase()}>
+            {p.thumbnail && <img src={p.thumbnail} alt="" loading="lazy" width="480" height="360" />}
+            <div class="library-card-body">
+              <h3>{shortTitle(p.title)}</h3>
+              <p class="muted">{p.videoCount} videos</p>
+              <p>{p.description}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
