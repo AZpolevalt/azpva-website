@@ -1,0 +1,24 @@
+---
+const { placeholder = 'Filter…', target } = Astro.props;
+---
+<div class="library-filter">
+  <label class="visually-hidden" for="library-filter-input">Filter</label>
+  <input id="library-filter-input" type="search" placeholder={placeholder} data-library-filter={target} autocomplete="off" />
+  <p class="muted library-filter-empty" data-library-empty hidden>No matches.</p>
+</div>
+<script>
+  document.querySelectorAll<HTMLInputElement>('[data-library-filter]').forEach((input) => {
+    const items = document.querySelectorAll<HTMLElement>(input.dataset.libraryFilter || '');
+    const empty = input.parentElement?.querySelector<HTMLElement>('[data-library-empty]');
+    input.addEventListener('input', () => {
+      const q = input.value.trim().toLowerCase();
+      let shown = 0;
+      items.forEach((el) => {
+        const hit = !q || (el.dataset.search || '').includes(q);
+        el.hidden = !hit;
+        if (hit) shown++;
+      });
+      if (empty) empty.hidden = shown > 0;
+    });
+  });
+</script>

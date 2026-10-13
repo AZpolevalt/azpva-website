@@ -189,7 +189,10 @@ const hasLegacyDual = Boolean(portrait && actionImage && !gallery?.length);
 
   <section class="section" style="padding-top: 0">
     <div class="container">
-      <p><a class="btn btn-secondary" href="/team">Back to team</a></p>
+      <p>
+        {coach.id === 'dean-starkey' && <a class="btn btn-primary" href="/library">Dean's Exercise Library</a>}
+        <a class="btn btn-secondary" href="/team" style={coach.id === 'dean-starkey' ? 'margin-left: 0.5rem' : undefined}>Back to team</a>
+      </p>
     </div>
   </section>
 </BaseLayout>
