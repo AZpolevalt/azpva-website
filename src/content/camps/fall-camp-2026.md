@@ -40,7 +40,7 @@ Dean Starkey, Garrett Starkey, Nathan Hiett, and Tray Oates — AZPVA’s high-p
 
 ## What to bring
 
-Running shoes, track spikes, workout clothes, sweat pants and shirt, swimsuit, and warm/cold-weather casual clothing. Bring your own poles if you prefer — borrowing from AZPVA’s extensive fleet is included at no extra charge.
+Running shoes, track spikes, workout clothes, sweat pants and shirt, and warm/cold-weather casual clothing. Bring your own poles if you prefer — borrowing from AZPVA’s extensive fleet is included at no extra charge.
 
 ## Out-of-town athletes
 
