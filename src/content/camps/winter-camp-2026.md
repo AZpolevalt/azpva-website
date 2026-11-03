@@ -33,7 +33,7 @@ Spots are first-come, first-served and limited. Register ASAP based on availabil
 
 ## Itinerary may include
 
-Pole vaulting, video analysis, gymnastics, rope swing, weight training, plyometrics, nutrition, rehab/recovery, injury prevention, sport psychology, speed work, progression methodology, round-table discussions, and recreational activities.
+Pole vaulting, video analysis, gymnastics, weight training, plyometrics, nutrition, rehab/recovery, injury prevention, sport psychology, speed work, progression methodology, round-table discussions, and recreational activities.
 
 ## Camp coaches
 

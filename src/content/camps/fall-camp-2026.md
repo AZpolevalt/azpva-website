@@ -4,10 +4,8 @@ dates: October 24–25, 2026
 startDate: 2026-10-24
 ages: Typically ages 12–18 (exceptions case-by-case)
 price: Commuter $399 · Overnighter $599
-status: open
-registerCommuterUrl: https://azpva.pushpress.com/landing/events/cal-7458d482eb984059bdbc737d2967/login
-registerOvernighterUrl: https://azpva.pushpress.com/landing/events/cal-46ab3082a4634f12b2f07bf4ee28/login
-summary: Two-day fall camp (Oct 24–25, 2026) at the Queen Creek facility — open to all skill levels. Choose Commuter ($399) or Overnighter ($599) with meals and ranch lodging.
+status: closed
+summary: Completed. Two-day fall camp (Oct 24–25, 2026) at the Queen Creek facility, open to all skill levels. Commuter ($399) and Overnighter ($599) included meals and ranch lodging.
 featured: true
 ---
 
@@ -22,7 +20,7 @@ Arizona Pole Vault Academy offers a 2-day pole vault camp open to all skill leve
 - **Commuter — $399:** Camp, lunch, and dinner.
 - **Overnighter — $599:** Camp, all meals, and sleeping accommodations at the Starkey Ranch (up to 10 campers on-site). Due to travel, overnight guests may arrive/stay the day before and after camp if needed.
 
-Spots are first-come, first-served and limited. Register ASAP based on availability.
+Fall Camp 2026 is completed. Registration is closed.
 
 ## Schedule highlights
 
@@ -32,7 +30,7 @@ Spots are first-come, first-served and limited. Register ASAP based on availabil
 
 ## Itinerary may include
 
-Pole vaulting, video analysis, gymnastics, rope swing, weight training, plyometrics, nutrition, rehab/recovery, injury prevention, sport psychology, speed work, progression methodology, round-table discussions, and recreational activities.
+Pole vaulting, video analysis, gymnastics, weight training, plyometrics, nutrition, rehab/recovery, injury prevention, sport psychology, speed work, progression methodology, round-table discussions, and recreational activities.
 
 ## Camp coaches
 
