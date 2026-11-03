@@ -3,9 +3,12 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import CampCard from '../../components/CampCard.astro';
 import { getCollection } from 'astro:content';
 
-const camps = (await getCollection('camps')).sort(
-  (a, b) => a.data.startDate.valueOf() - b.data.startDate.valueOf()
-);
+const camps = (await getCollection('camps')).sort((a, b) => {
+  const closedRank = (status: string) => (status === 'closed' ? 1 : 0);
+  const byStatus = closedRank(a.data.status) - closedRank(b.data.status);
+  if (byStatus !== 0) return byStatus;
+  return a.data.startDate.valueOf() - b.data.startDate.valueOf();
+});
 ---
 
 <BaseLayout
@@ -18,7 +21,9 @@ const camps = (await getCollection('camps')).sort(
       <h1>Camps & Training</h1>
       <p style="color: rgba(255,255,255,0.85); max-width: 55ch">
         Concentrated vault days and seasonal blocks designed for technical growth — from fall camp weekends to the Mon/Wed Fall Training roster.
-        Fall and Winter camps are open to all skill levels and offer <strong>Commuter ($399)</strong> and <strong>Overnighter ($599)</strong> registration options.
+        <strong>Winter Camp (December 29–30)</strong> is the upcoming camp and is open for registration:
+        <strong>Commuter ($399)</strong> or <strong>Overnighter ($599)</strong>, open to all skill levels.
+        Fall Camp 2026 is completed and registration is closed.
       </p>
     </div>
   </section>

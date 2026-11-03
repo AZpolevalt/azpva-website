@@ -13,8 +13,10 @@ export async function getStaticPaths() {
 
 const { camp } = Astro.props;
 const { Content } = await render(camp);
-const { registerUrl, registerCommuterUrl, registerOvernighterUrl } = camp.data;
+const { registerUrl, registerCommuterUrl, registerOvernighterUrl, status } = camp.data;
+const registrationClosed = status === 'closed';
 const hasDualRegister = Boolean(registerCommuterUrl || registerOvernighterUrl);
+const statusLabel = registrationClosed ? 'Completed' : status.replace('-', ' ');
 const { albums, photosByAlbum } = await loadPhotoArchive();
 const campAlbum = albumForCamp(camp.id, albums);
 const campAlbumPhotos = campAlbum ? photosByAlbum.get(campAlbum.id) ?? [] : [];
@@ -28,16 +30,21 @@ const campAlbumHref = campAlbum && campAlbumPhotos.length > 0 ? `/photos/${campA
       <h1>{camp.data.title}</h1>
       <p style="color: rgba(255,255,255,0.85)">{camp.data.dates}</p>
       <p style="margin-top: 0.75rem">
-        <span class={`badge ${camp.data.status}`}>{camp.data.status.replace('-', ' ')}</span>
+        <span class={`badge ${status}`}>{statusLabel}</span>
         {camp.data.price && <span style="margin-left: 0.75rem">{camp.data.price}</span>}
       </p>
     </div>
   </section>
   <section class="section">
     <div class="container prose">
+      {registrationClosed && (
+        <p class="notice notice-closed" role="status">
+          <strong>Completed — registration closed.</strong>
+        </p>
+      )}
       <Content />
       <p style="margin-top: 2rem; display:flex; flex-wrap:wrap; gap:0.75rem">
-        {hasDualRegister ? (
+        {!registrationClosed && hasDualRegister ? (
           <>
             {registerCommuterUrl && (
               <a class="btn btn-primary" href={registerCommuterUrl} target="_blank" rel="noopener noreferrer">
@@ -50,9 +57,9 @@ const campAlbumHref = campAlbum && campAlbumPhotos.length > 0 ? `/photos/${campA
               </a>
             )}
           </>
-        ) : registerUrl ? (
+        ) : !registrationClosed && registerUrl ? (
           <a class="btn btn-primary" href={registerUrl} target="_blank" rel="noopener noreferrer">Register</a>
-        ) : camp.data.status === 'coming-soon' || camp.data.status === 'closed' ? null : (
+        ) : status === 'coming-soon' || registrationClosed ? null : (
           <a class="btn btn-primary" href="tel:+14807666017">Call to register</a>
         )}
         <a class="btn btn-secondary" href="tel:+14807666017">Call (480) 766-6017</a>

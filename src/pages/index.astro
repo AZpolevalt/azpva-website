@@ -4,6 +4,7 @@ import CampCard from '../components/CampCard.astro';
 import { getCollection } from 'astro:content';
 
 const camps = (await getCollection('camps'))
+  .filter((camp) => camp.data.status !== 'closed')
   .sort((a, b) => a.data.startDate.valueOf() - b.data.startDate.valueOf())
   .slice(0, 2);
 

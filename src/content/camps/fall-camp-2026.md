@@ -4,14 +4,16 @@ dates: October 24–25, 2026
 startDate: 2026-10-24
 ages: Typically ages 12–18 (exceptions case-by-case)
 price: Commuter $399 · Overnighter $599
-status: open
+status: closed
 registerCommuterUrl: https://azpva.pushpress.com/landing/events/cal-7458d482eb984059bdbc737d2967/login
 registerOvernighterUrl: https://azpva.pushpress.com/landing/events/cal-46ab3082a4634f12b2f07bf4ee28/login
-summary: Two-day fall camp (Oct 24–25, 2026) at the Queen Creek facility — open to all skill levels. Choose Commuter ($399) or Overnighter ($599) with meals and ranch lodging.
-featured: true
+summary: Completed two-day fall camp (Oct 24–25, 2026) at the Queen Creek facility. Registration is closed.
+featured: false
 ---
 
-Arizona Pole Vault Academy offers a 2-day pole vault camp open to all skill levels — beginners through advanced. Vaulters of every experience level can learn and enjoy. Camp immerses athletes in a hands-on, personalized approach to every aspect of becoming the best pole vaulter they can be.
+**Completed.** Fall Camp 2026 has finished, and registration is closed.
+
+Arizona Pole Vault Academy held a 2-day pole vault camp open to all skill levels — beginners through advanced. Vaulters of every experience level could learn and enjoy. Camp immersed athletes in a hands-on, personalized approach to every aspect of becoming the best pole vaulter they can be.
 
 **Dates:** October 24–25, 2026  
 **Location:** Arizona Pole Vault Academy · 23238 S. Via Del Arroyo, Queen Creek, AZ 85142  
@@ -22,7 +24,7 @@ Arizona Pole Vault Academy offers a 2-day pole vault camp open to all skill leve
 - **Commuter — $399:** Camp, lunch, and dinner.
 - **Overnighter — $599:** Camp, all meals, and sleeping accommodations at the Starkey Ranch (up to 10 campers on-site). Due to travel, overnight guests may arrive/stay the day before and after camp if needed.
 
-Spots are first-come, first-served and limited. Register ASAP based on availability.
+Registration is closed. This camp has been completed.
 
 ## Schedule highlights
 

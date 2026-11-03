@@ -9,14 +9,20 @@ interface Props {
 }
 
 const { title, dates, summary, price, status = 'open', href } = Astro.props;
+const statusLabel = status === 'closed' ? 'Completed' : status.replace('-', ' ');
 ---
 
 <article class="card">
   <div style="display:flex; justify-content:space-between; gap:0.75rem; align-items:start; margin-bottom:0.75rem">
     <h3>{title}</h3>
-    <span class={`badge ${status}`}>{status.replace('-', ' ')}</span>
+    <span class={`badge ${status}`}>{statusLabel}</span>
   </div>
   <p class="muted">{dates}</p>
+  {status === 'closed' && (
+    <p class="notice notice-closed" role="status" style="margin: 0.75rem 0 1rem">
+      <strong>Registration closed.</strong>
+    </p>
+  )}
   <p>{summary}</p>
   {price && <p class="price" style="font-size:1.4rem; margin: 0.5rem 0 1rem">{price}</p>}
   <a class="btn btn-primary" href={href}>Details</a>
