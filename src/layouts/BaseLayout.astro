@@ -20,8 +20,6 @@ const pageTitle = title.includes('Arizona Pole Vault') ? title : `${title} | Ari
 const canonicalURL = canonical
   ? new URL(canonical, Astro.site)
   : new URL(Astro.url.pathname, Astro.site);
-
-const cfAnalyticsToken = import.meta.env.PUBLIC_CF_WEB_ANALYTICS_TOKEN;
 ---
 
 <!doctype html>
@@ -52,8 +50,5 @@ const cfAnalyticsToken = import.meta.env.PUBLIC_CF_WEB_ANALYTICS_TOKEN;
     </main>
     <Footer />
     <AskMaya />
-    {cfAnalyticsToken && (
-      <script is:inline defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={`{"token": "${cfAnalyticsToken}"}`}></script>
-    )}
   </body>
 </html>
